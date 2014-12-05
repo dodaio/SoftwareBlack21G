@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import java.lang.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.layout.AnchorPane?>
+
+<AnchorPane prefHeight="530.0" prefWidth="723.0" styleClass="background" stylesheets="@MainGame.css" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1">
+   <children>
+      <MenuBar prefHeight="27.0" prefWidth="723.0">
+        <menus>
+          <Menu mnemonicParsing="false" text="File">
+            <items>
+              <MenuItem mnemonicParsing="false" text="Close" />
+            </items>
+          </Menu>
+          <Menu mnemonicParsing="false" text="Edit">
+            <items>
+              <MenuItem mnemonicParsing="false" text="Delete" />
+            </items>
+          </Menu>
+          <Menu mnemonicParsing="false" text="Help">
+            <items>
+              <MenuItem mnemonicParsing="false" text="About" />
+            </items>
+          </Menu>
+        </menus>
+      </MenuBar>
+      <HBox alignment="CENTER" layoutX="174.0" layoutY="392.0" prefHeight="53.0" prefWidth="376.0" spacing="30.0">
+         <children>
+            <Button alignment="CENTER" contentDisplay="CENTER" graphicTextGap="8.0" mnemonicParsing="false" prefHeight="37.0" prefWidth="61.0" text="Hit" textAlignment="CENTER" />
+            <Button alignment="CENTER" contentDisplay="CENTER" graphicTextGap="8.0" mnemonicParsing="false" prefHeight="37.0" prefWidth="61.0" text="Deal" textAlignment="CENTER" />
+            <Button alignment="CENTER" contentDisplay="CENTER" graphicTextGap="8.0" mnemonicParsing="false" prefHeight="37.0" prefWidth="61.0" text="Stand" textAlignment="CENTER" />
+         </children>
+         <opaqueInsets>
+            <Insets />
+         </opaqueInsets>
+      </HBox>
+   </children>
+</AnchorPane>

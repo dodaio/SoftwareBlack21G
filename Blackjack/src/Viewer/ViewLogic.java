@@ -34,10 +34,10 @@ public class ViewLogic {
     	mstage = stg;
     	
 		try {
-			Parent root = FXMLLoader.load(getClass().getResource("Main21.fxml"));
+			Parent root = FXMLLoader.load(getClass().getResource("MainGame.fxml"));
 			Scene scene = new Scene(root);
 			Stage primaryStage = mstage;
-			//scene.getStylesheets().add(getClass().getResource("Login.css").toExternalForm());
+			scene.getStylesheets().add(getClass().getResource("MainGame.css").toExternalForm());
 			primaryStage.setScene(scene);
 			primaryStage.setResizable(false);
 			primaryStage.sizeToScene();
