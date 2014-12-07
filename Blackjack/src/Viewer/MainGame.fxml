@@ -27,7 +27,7 @@
           </Menu>
         </menus>
       </MenuBar>
-      <HBox alignment="CENTER" layoutX="174.0" layoutY="392.0" prefHeight="53.0" prefWidth="376.0" spacing="30.0">
+      <HBox alignment="CENTER" layoutX="174.0" layoutY="441.0" prefHeight="53.0" prefWidth="376.0" spacing="30.0">
          <children>
             <Button alignment="CENTER" contentDisplay="CENTER" graphicTextGap="8.0" mnemonicParsing="false" prefHeight="37.0" prefWidth="61.0" text="Hit" textAlignment="CENTER" />
             <Button alignment="CENTER" contentDisplay="CENTER" graphicTextGap="8.0" mnemonicParsing="false" prefHeight="37.0" prefWidth="61.0" text="Deal" textAlignment="CENTER" />
@@ -37,5 +37,7 @@
             <Insets />
          </opaqueInsets>
       </HBox>
+      <StackPane layoutX="297.0" layoutY="68.0" prefHeight="150.0" prefWidth="130.0" />
+      <StackPane layoutX="297.0" layoutY="265.0" prefHeight="150.0" prefWidth="130.0" />
    </children>
 </AnchorPane>
