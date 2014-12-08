@@ -72,7 +72,7 @@ public class Deck {
 	protected Card getCard(){
 		if(getCardsDeck() != null)
 			return getCardsDeck()[deckIndex++]; // deckIndex is re-initilized at shuffle()
-		return null; // if no deck doesn't exists.
+		return null; // if deck doesn't exists.
 	}
 
 }

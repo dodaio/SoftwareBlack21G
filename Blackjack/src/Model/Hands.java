@@ -9,17 +9,17 @@ public class Hands {
 	/** The dealer's hand */
 	private List<Card> dealerCards;
 	/** The player's hand */
-	private List<Card> playerHand;
+	private List<Card> playerCards;
 	/** Pointer to the game's deck*/
 	private Deck deck;
 	// ***************************************** Constructors
 	/**
 	 * Full C'tor.
 	 */
-	protected Hands(Deck deck) {
+	protected Hands() {
 		this.dealerCards = new ArrayList<Card>();
-		this.playerHand = new ArrayList<Card>();
-		this.deck = deck;
+		this.playerCards = new ArrayList<Card>();
+		this.deck = new Deck();
 	}
 	
 	/**
@@ -39,18 +39,17 @@ public class Hands {
 
 
 	/**
-	 * @return the playerHand
+	 * @return the playerCards
 	 */
-	protected List<Card> getPlayerHand() {
-		return playerHand;
+	protected List<Card> getPlayerCards() {
+		return playerCards;
 	}
 
-
 	/**
-	 * @param playerHand the playerHand to set
+	 * @param playerCards the playerCards to set
 	 */
-	protected void setPlayerHand(List<Card> playerHand) {
-		this.playerHand = playerHand;
+	protected void setplayerCards(List<Card> playerCards) {
+		this.playerCards = playerCards;
 	}
 	
 	/**
@@ -58,7 +57,7 @@ public class Hands {
 	 */
 	protected void reset() {
 		getDealerCards().clear();
-		getPlayerHand().clear();
+		getPlayerCards().clear();
 	}
 	
 	/**
@@ -72,22 +71,29 @@ public class Hands {
 	 * hit the player
 	 */
 	protected void hitPlayer(){
-		getPlayerHand().add(deck.getCard());
+		getPlayerCards().add(deck.getCard());
 	}
-	
-	
-	
-	// המתודות למטה לא גמורות, צריך להתחשב במקרה של אס.
-	
-	
+
 	/**
 	 * return for calculating the simple score of the dealer
 	 * @return the dealer simple score
 	 */
 	protected int getDealerScore(){
-		int i = 0;
-		for (Card card : dealerCards) 
-			i += card.getcValue();
+		int i = 0 , cValue;
+		for (Card card : dealerCards) {
+			cValue = card.getcValue();
+			if(cValue > 10) // if royalty
+				i+=10;
+			else {
+				if(cValue == 1) // if ace
+					if(i > 10) // hand won't burst with ace as 11
+						i+=11;
+					else  // hand will burst with ace as 11
+						i+=1;
+				else // everything else: value (2-10)
+					i += cValue;
+			}
+		}
 		return i;
 	}
 	
@@ -96,11 +102,25 @@ public class Hands {
 	 * @return the player simple score
 	 */
 	protected int getPlayerScore(){
-		int i = 0;
-		for (Card card : playerHand) 
-			i += card.getcValue();
+		int i = 0 , cValue;
+		boolean ace = false;
+		for (Card card : playerCards) {
+			cValue = card.getcValue();
+			if(cValue > 10) // if royalty
+				i+=10;
+			else {
+				if(cValue == 1) // if ace
+					if(ace == false) { // first ace
+						i+=11;
+						ace = true;
+					}
+					else  // after first ace
+						i+=1;
+				else // everything else: value (2-10)
+					i += cValue;
+			}
+		}
 		return i;
 	}
-	
 	
 }
