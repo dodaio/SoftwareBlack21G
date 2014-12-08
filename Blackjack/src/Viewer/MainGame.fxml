@@ -12,7 +12,7 @@
         <menus>
           <Menu mnemonicParsing="false" text="File">
             <items>
-              <MenuItem mnemonicParsing="false" text="Close" />
+              <MenuItem mnemonicParsing="false" onAction="#Exit" text="Close" />
             </items>
           </Menu>
           <Menu mnemonicParsing="false" text="Edit">
@@ -29,9 +29,9 @@
       </MenuBar>
       <HBox alignment="CENTER" layoutX="174.0" layoutY="441.0" prefHeight="53.0" prefWidth="376.0" spacing="30.0">
          <children>
-            <Button alignment="CENTER" contentDisplay="CENTER" graphicTextGap="8.0" mnemonicParsing="false" prefHeight="37.0" prefWidth="61.0" text="Hit" textAlignment="CENTER" />
-            <Button alignment="CENTER" contentDisplay="CENTER" graphicTextGap="8.0" mnemonicParsing="false" prefHeight="37.0" prefWidth="61.0" text="Deal" textAlignment="CENTER" />
-            <Button alignment="CENTER" contentDisplay="CENTER" graphicTextGap="8.0" mnemonicParsing="false" prefHeight="37.0" prefWidth="61.0" text="Stand" textAlignment="CENTER" />
+            <Button alignment="CENTER" contentDisplay="CENTER" graphicTextGap="8.0" mnemonicParsing="false" onAction="#HandleHit" prefHeight="37.0" prefWidth="61.0" text="Hit" textAlignment="CENTER" />
+            <Button alignment="CENTER" contentDisplay="CENTER" graphicTextGap="8.0" mnemonicParsing="false" onAction="#HandleDeal" prefHeight="37.0" prefWidth="61.0" text="Deal" textAlignment="CENTER" />
+            <Button alignment="CENTER" contentDisplay="CENTER" graphicTextGap="8.0" mnemonicParsing="false" onAction="#HandleStand" prefHeight="37.0" prefWidth="61.0" text="Stand" textAlignment="CENTER" />
          </children>
          <opaqueInsets>
             <Insets />
@@ -41,7 +41,7 @@
       <Label layoutX="174.0" layoutY="125.0" prefHeight="37.0" prefWidth="71.0" text="Card No. 1" />
       <Label layoutX="315.0" layoutY="125.0" prefHeight="37.0" prefWidth="71.0" text="Card No. 2" />
       <Label layoutX="467.0" layoutY="125.0" prefHeight="37.0" prefWidth="71.0" text="Card No. 3" />
-      <Label layoutX="174.0" layoutY="322.0" prefHeight="37.0" prefWidth="71.0" text="Card No. 1" />
+      <Label fx:id="lblPCard1" layoutX="174.0" layoutY="322.0" prefHeight="37.0" prefWidth="71.0" text="Card No. 1" />
       <Label layoutX="327.0" layoutY="322.0" prefHeight="37.0" prefWidth="71.0" text="Card No. 2" />
       <Label layoutX="467.0" layoutY="322.0" prefHeight="37.0" prefWidth="71.0" text="Card No. 3" />
       <TextField fx:id="txt_Dcard3" layoutX="434.0" layoutY="162.0" prefHeight="25.0" prefWidth="130.0" />
@@ -52,5 +52,6 @@
       <TextField fx:id="txt_Pcard1" layoutX="136.0" layoutY="359.0" prefHeight="25.0" prefWidth="130.0" />
       <Label layoutX="174.0" layoutY="69.0" prefHeight="37.0" prefWidth="97.0" text="Dealer" />
       <Label layoutX="174.0" layoutY="275.0" prefHeight="37.0" prefWidth="97.0" text="Player" />
+      <Label fx:id="Massegelbl" layoutX="252.0" layoutY="285.0" prefHeight="17.0" prefWidth="71.0" />
    </children>
 </AnchorPane>
