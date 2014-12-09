@@ -10,8 +10,9 @@ public class Hands {
 	private List<Card> dealerCards;
 	/** The player's hand */
 	private List<Card> playerCards;
-	/** Pointer to the game's deck*/
+	/** Pointer to the game's deck */
 	private Deck deck;
+
 	// ***************************************** Constructors
 	/**
 	 * Full C'tor.
@@ -21,7 +22,7 @@ public class Hands {
 		this.playerCards = new ArrayList<Card>();
 		this.deck = new Deck();
 	}
-	
+
 	/**
 	 * @return the dealerCards
 	 */
@@ -29,14 +30,13 @@ public class Hands {
 		return dealerCards;
 	}
 
-
 	/**
-	 * @param dealerCards the dealerCards to set
+	 * @param dealerCards
+	 *            the dealerCards to set
 	 */
 	protected void setDealerCards(List<Card> dealerCards) {
 		this.dealerCards = dealerCards;
 	}
-
 
 	/**
 	 * @return the playerCards
@@ -46,12 +46,13 @@ public class Hands {
 	}
 
 	/**
-	 * @param playerCards the playerCards to set
+	 * @param playerCards
+	 *            the playerCards to set
 	 */
 	protected void setplayerCards(List<Card> playerCards) {
 		this.playerCards = playerCards;
 	}
-	
+
 	/**
 	 * Reseting the hands after each round
 	 */
@@ -59,68 +60,91 @@ public class Hands {
 		getDealerCards().clear();
 		getPlayerCards().clear();
 	}
-	
+
 	/**
 	 * hit the dealer
 	 */
-	protected void hitDealer(){
+	protected void hitDealer() {
 		getDealerCards().add(deck.getCard());
 	}
-	
+
 	/**
 	 * hit the player
 	 */
-	protected void hitPlayer(){
+	protected void hitPlayer() {
 		getPlayerCards().add(deck.getCard());
 	}
 
 	/**
 	 * return for calculating the simple score of the dealer
+	 * 
 	 * @return the dealer simple score
 	 */
-	protected int getDealerScore(){
-		int i = 0 , cValue;
+	protected int getDealerScore() {
+		int i = 0, cValue;
 		for (Card card : dealerCards) {
 			cValue = card.getcValue();
-			if(cValue > 10) // if royalty
-				i+=10;
+			if (cValue > 10) // if royalty
+				i += 10;
 			else {
-				if(cValue == 1) // if ace
-					if(i > 10) // hand won't burst with ace as 11
-						i+=11;
-					else  // hand will burst with ace as 11
-						i+=1;
-				else // everything else: value (2-10)
+				if (cValue == 1) // if ace
+					if (i > 10) // hand won't burst with ace as 11
+						i += 11;
+					else
+						// hand will burst with ace as 11
+						i += 1;
+				else
+					// everything else: value (2-10)
 					i += cValue;
 			}
 		}
 		return i;
 	}
-	
+
 	/**
 	 * return for calculating the simple score of the player
+	 * 
 	 * @return the player simple score
 	 */
-	protected int getPlayerScore(){
-		int i = 0 , cValue;
+	protected int getPlayerScore() {
+		int i = 0, cValue;
 		boolean ace = false;
 		for (Card card : playerCards) {
 			cValue = card.getcValue();
-			if(cValue > 10) // if royalty
-				i+=10;
+			if (cValue > 10) // if royalty
+				i += 10;
 			else {
-				if(cValue == 1) // if ace
-					if(ace == false) { // first ace
-						i+=11;
+				if (cValue == 1) // if ace
+					if (ace == false) { // first ace
+						i += 11;
 						ace = true;
-					}
-					else  // after first ace
-						i+=1;
-				else // everything else: value (2-10)
+					} else
+						// after first ace
+						i += 1;
+				else
+					// everything else: value (2-10)
 					i += cValue;
 			}
 		}
 		return i;
 	}
-	
+
+	/**
+	 * returns game result
+	 * 
+	 * @return true if player wins, otherwise false
+	 */
+	protected boolean calculteGameResualt() {
+		int dealerScore = getDealerScore();
+		int playerScore = getPlayerScore();
+
+		if (dealerScore == 21
+				|| playerScore > 21
+				|| (playerScore < 21 && dealerScore < 21 && dealerScore > playerScore)) {
+			return false; // lose
+		} else {
+			return true; // win
+		}
+
+	}
 }
