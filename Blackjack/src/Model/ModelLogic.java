@@ -1,5 +1,7 @@
 package Model;
 
+import java.util.List;
+
 import Controller.ControllerLogic;
 
 public class ModelLogic {
@@ -34,8 +36,9 @@ public class ModelLogic {
 	}
 
 	public void hit() {
-		hands.hitDealer();
+		hands.hitPlayer();
 		int score = hands.getPlayerScore();
+		updatePlayer();
 		if (score > 21) {
 			announceResualt(false);
 		} else if (score == 21) {
@@ -46,6 +49,7 @@ public class ModelLogic {
 	public void stand() {
 		while (hands.getDealerScore() <= dealer_limit) {
 			hands.hitDealer();
+			updateDealer();
 		}
 		boolean result = hands.calculteGameResualt();
 		announceResualt(result);
@@ -57,8 +61,34 @@ public class ModelLogic {
 	 * @param result
 	 *            true if win, false if lose
 	 */
+	private void updatePlayer() {
+		updatePlayerScore(hands.getPlayerScore());
+		updatePlayerCards(hands.getPlayerCards());
+	}
+
+	private void updateDealer() {
+		updateDealerScore(hands.getDealerScore());
+		updateDealerCards(hands.getDealerCards());
+	}
+	
 	private void announceResualt(boolean result) {
 		controller.printGameResualt(result, result ? win_msg : lose_msg);
+	}
+
+	private void updatePlayerScore(int score) {
+		controller.updatePlayerScore(score);
+	}
+
+	private void updateDealerScore(int score) {
+		controller.updateDealerScore(score);
+	}
+
+	private void updatePlayerCards(List<Model.Card> cards) {
+		controller.updatePlayerCards(cards);
+	}
+
+	private void updateDealerCards(List<Model.Card> cards) {
+		controller.updateDealerCards(cards);
 	}
 
 }

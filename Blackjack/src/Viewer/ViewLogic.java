@@ -1,6 +1,7 @@
 package Viewer;
 
 import java.io.IOException;
+import java.util.List;
 
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
@@ -64,5 +65,21 @@ public class ViewLogic {
 	 */
 	public void printGameResult(boolean result, String msg){
 		// TODO: connect to the same method in MainGameController
+	}
+	
+	public void updatePlayerScore(int score) {
+		// TODO
+	}
+	
+	public void updateDealerScore(int score) {
+		// TODO
+	}
+	
+	public void updatePlayerCards(List<Model.Card> cards) {
+		// TODO
+	}
+	
+	public void updateDealerCards(List<Model.Card> cards) {
+		// TODO
 	}
 }

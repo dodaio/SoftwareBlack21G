@@ -1,5 +1,7 @@
 package Controller;
 
+import java.util.List;
+
 import Model.ModelLogic;
 import Viewer.ViewLogic;
 import javafx.stage.Stage;
@@ -49,5 +51,23 @@ public class ControllerLogic {
 	public void printGameResualt(boolean result, String msg) {
 		view.printGameResult(result, msg);
 	}
+	
+	public void updatePlayerScore(int score) {
+		view.updatePlayerScore(score);
+	}
+	
+	public void updateDealerScore(int score) {
+		view.updateDealerScore(score);
+	}
+	
+	public void updatePlayerCards(List<Model.Card> cards) {
+		view.updatePlayerCards(cards);
+	}
+	
+	public void updateDealerCards(List<Model.Card> cards) {
+		view.updateDealerCards(cards);
+	}
+	
+	
 
 }
