@@ -11,6 +11,7 @@ import javafx.fxml.Initializable;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.layout.AnchorPane;
+import Controller.ControllerLogic;
 import Model.Card;
 
 import java.util.*;
@@ -20,21 +21,10 @@ import java.util.*;
  *
  */
 public class MainGameController extends AnchorPane implements Initializable {
-
-//	@FXML
-//	TextField txt_Dcard1;
-//	@FXML
-//	TextField txt_Dcard2;
-//	@FXML
-//	TextField txt_Dcard3;
-//	
-//	@FXML
-//	TextField txt_Pcard1;
-//	@FXML
-//	TextField txt_Pcard2;
-//	@FXML
-//	TextField txt_Pcard3;
 	
+	
+	
+	private ControllerLogic controllerInstance;
 	/**
 	 * test purpose only!
 	 */
@@ -45,6 +35,12 @@ public class MainGameController extends AnchorPane implements Initializable {
 	Button BtnDeal;
 	
 	
+	//*******************************C'tor***********************************************
+	
+	public MainGameController() {
+		controllerInstance = ViewLogic.controller;
+	}
+
 	//*******************************Dealer variables************************************
 	@FXML
 	Label MassegelblD1;
@@ -73,6 +69,7 @@ public class MainGameController extends AnchorPane implements Initializable {
 	
 	@Override
 	public void initialize(URL location, ResourceBundle resources) {
+		
 		MassegelblD1.setText("Hidden");
 		MassegelblD2.setText("Some Card");
 		//MassegelblD3.setText("None");
