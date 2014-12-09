@@ -59,6 +59,7 @@ public class Hands {
 	protected void reset() {
 		getDealerCards().clear();
 		getPlayerCards().clear();
+		deck.newDeck();
 	}
 
 	/**

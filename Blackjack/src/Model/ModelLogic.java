@@ -26,7 +26,11 @@ public class ModelLogic {
 	}
 
 	public void deal() {
-
+		hands.reset();
+		for (int i = 0; i < 2; i++) {
+			hands.hitDealer();
+			hands.hitPlayer();
+		}
 	}
 
 	public void hit() {

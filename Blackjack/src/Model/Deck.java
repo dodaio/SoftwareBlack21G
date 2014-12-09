@@ -15,6 +15,10 @@ public class Deck {
 	 * Full C'tor.
 	 */
 	protected Deck() {
+		newDeck();
+	}
+	
+	protected void newDeck() {
 		this.CardsDeck = reset(); // init deck
 		this.CardsDeck = shuffleArray(this.getCardsDeck()); // shuffle deck
 	}
