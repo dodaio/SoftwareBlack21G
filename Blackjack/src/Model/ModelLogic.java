@@ -33,6 +33,7 @@ public class ModelLogic {
 			hands.hitDealer();
 			hands.hitPlayer();
 		}
+		dealBtnVisability(false);
 	}
 
 	public void hit() {
@@ -89,6 +90,14 @@ public class ModelLogic {
 
 	private void updateDealerCards(List<Model.Card> cards) {
 		controller.updateDealerCards(cards);
+	}
+	
+	/**
+	 * Sets deal button visibility
+	 * @param visible true to set visible, false to disable 
+	 */
+	private void dealBtnVisability(boolean visible) {
+		controller.dealBtnVisability(visible);
 	}
 
 }

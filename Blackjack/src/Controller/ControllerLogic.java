@@ -68,6 +68,14 @@ public class ControllerLogic {
 		view.updateDealerCards(cards);
 	}
 	
+	/**
+	 * Sets deal button visibility
+	 * @param visible true to set visible, false to disable 
+	 */
+	public void dealBtnVisability(boolean visible) {
+		view.dealBtnVisability(visible);
+	}
+	
 	
 
 }

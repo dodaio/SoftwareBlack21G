@@ -82,4 +82,12 @@ public class ViewLogic {
 	public void updateDealerCards(List<Model.Card> cards) {
 		// TODO
 	}
+	
+	/**
+	 * Sets deal button visibility
+	 * @param visible true to set visible, false to disable 
+	 */
+	public void dealBtnVisability(boolean visible) {
+		
+	}
 }
