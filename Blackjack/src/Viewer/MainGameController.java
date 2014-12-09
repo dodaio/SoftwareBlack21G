@@ -8,8 +8,12 @@ import java.util.ResourceBundle;
 
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
+import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.layout.AnchorPane;
+import Model.Card;
+
+import java.util.*;
 
 /**
  * Control the main game
@@ -31,8 +35,15 @@ public class MainGameController extends AnchorPane implements Initializable {
 //	@FXML
 //	TextField txt_Pcard3;
 	
+	/**
+	 * test purpose only!
+	 */
 	@FXML
 	Label Massegelbl;
+	
+	@FXML
+	Button BtnDeal;
+	
 	
 	//*******************************Dealer variables************************************
 	@FXML
@@ -75,6 +86,8 @@ public class MainGameController extends AnchorPane implements Initializable {
 	}
 	
 	
+	//*******************************Methods GUI************************************
+
 	
 	@FXML
 	private void Exit(){
@@ -96,5 +109,64 @@ public class MainGameController extends AnchorPane implements Initializable {
 		Massegelbl.setText("Stand");
 	}
 	
+	/**
+	 * 
+	 * @param bool
+	 * @param str
+	 */
+	public void printGameResult(boolean bool, String str){
+		
+	}
+	
 
+	//*******************************Methods************************************
+
+	/**
+	 * 
+	 * @param score
+	 */
+	public void updatePlayerScore(int score){
+		
+	}
+	
+	/**
+	 * 
+	 * @param score
+	 */
+	public void updateDealerScore(int score){
+		
+	}
+	
+	/**
+	 * 
+	 * @param cardlist
+	 */
+	public void updatePlayerCards(List<Card> cardlist){
+		
+	}
+	
+	/**
+	 * 
+	 * @param cardlist
+	 */
+	public void updateDealerCards(List<Card> cardlist){
+		
+	}
+	
+	/**
+	 * 
+	 * @param startcard
+	 */
+	public void showDealerStartCards(Card startcard){
+		
+	}
+	
+	/**
+	 * 
+	 */
+	public void hideButtonDeal(){
+		
+		BtnDeal.setVisible(false);
+		
+	}
 }
