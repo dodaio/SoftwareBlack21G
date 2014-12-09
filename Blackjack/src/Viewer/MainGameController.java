@@ -3,14 +3,20 @@
  */
 package Viewer;
 
+import java.io.IOException;
 import java.net.URL;
 import java.util.ResourceBundle;
 
 import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
+import javafx.scene.Parent;
+import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.layout.AnchorPane;
+import javafx.stage.Modality;
+import javafx.stage.Stage;
 import Controller.ControllerLogic;
 import Model.Card;
 
@@ -22,12 +28,20 @@ import java.util.*;
  */
 public class MainGameController extends AnchorPane implements Initializable {
 	
+	/**
+	 * local stage for locking up About window 
+	 */
+	private Stage loaclstage;
 	
-	
+	/**
+	 * Controller instance
+	 */
 	private ControllerLogic controllerInstance;
+	
 	/**
 	 * test purpose only!
 	 */
+	
 	@FXML
 	Label Massegelbl;
 	
@@ -38,7 +52,10 @@ public class MainGameController extends AnchorPane implements Initializable {
 	//*******************************C'tor***********************************************
 	
 	public MainGameController() {
+		
 		controllerInstance = ViewLogic.controller;
+		loaclstage = ViewLogic.mstage;
+		
 	}
 
 	//*******************************Dealer variables************************************
@@ -113,6 +130,24 @@ public class MainGameController extends AnchorPane implements Initializable {
 	 */
 	public void printGameResult(boolean bool, String str){
 		
+	}
+	
+	@FXML
+	private void showAboutWindow(){
+		try {
+			Parent root = FXMLLoader.load(getClass().getResource("About.fxml"));
+			Scene scene = new Scene(root);
+			Stage primaryStage = new Stage();
+			primaryStage.initModality(Modality.WINDOW_MODAL);
+			primaryStage.initOwner(loaclstage);
+			primaryStage.setScene(scene);
+			primaryStage.setResizable(false);
+			primaryStage.sizeToScene();
+			primaryStage.show();
+		} catch (IOException e) {
+			
+			e.printStackTrace();
+		}	
 	}
 	
 
