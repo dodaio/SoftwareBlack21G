@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import javafx.scene.text.*?>
 <?import javafx.geometry.*?>
 <?import javafx.scene.control.*?>
 <?import java.lang.*?>
@@ -29,29 +30,77 @@
       </MenuBar>
       <HBox alignment="CENTER" layoutX="174.0" layoutY="441.0" prefHeight="53.0" prefWidth="376.0" spacing="30.0">
          <children>
-            <Button alignment="CENTER" contentDisplay="CENTER" graphicTextGap="8.0" mnemonicParsing="false" onAction="#HandleHit" prefHeight="37.0" prefWidth="61.0" text="Hit" textAlignment="CENTER" />
-            <Button alignment="CENTER" contentDisplay="CENTER" graphicTextGap="8.0" mnemonicParsing="false" onAction="#HandleDeal" prefHeight="37.0" prefWidth="61.0" text="Deal" textAlignment="CENTER" />
-            <Button alignment="CENTER" contentDisplay="CENTER" graphicTextGap="8.0" mnemonicParsing="false" onAction="#HandleStand" prefHeight="37.0" prefWidth="61.0" text="Stand" textAlignment="CENTER" />
+            <Button alignment="CENTER" contentDisplay="CENTER" graphicTextGap="8.0" mnemonicParsing="false" onAction="#onHitClick" prefHeight="37.0" prefWidth="61.0" text="Hit" textAlignment="CENTER" />
+            <Button alignment="CENTER" contentDisplay="CENTER" graphicTextGap="8.0" mnemonicParsing="false" onAction="#onDealClick" prefHeight="37.0" prefWidth="61.0" text="Deal" textAlignment="CENTER" />
+            <Button alignment="CENTER" contentDisplay="CENTER" graphicTextGap="8.0" mnemonicParsing="false" onAction="#onStandClick" prefHeight="37.0" prefWidth="61.0" text="Stand" textAlignment="CENTER" />
          </children>
          <opaqueInsets>
             <Insets />
          </opaqueInsets>
       </HBox>
       <StackPane layoutX="44.0" layoutY="87.0" prefHeight="150.0" prefWidth="130.0" />
-      <Label layoutX="174.0" layoutY="125.0" prefHeight="37.0" prefWidth="71.0" text="Card No. 1" />
-      <Label layoutX="315.0" layoutY="125.0" prefHeight="37.0" prefWidth="71.0" text="Card No. 2" />
-      <Label layoutX="467.0" layoutY="125.0" prefHeight="37.0" prefWidth="71.0" text="Card No. 3" />
-      <Label fx:id="lblPCard1" layoutX="174.0" layoutY="322.0" prefHeight="37.0" prefWidth="71.0" text="Card No. 1" />
-      <Label layoutX="327.0" layoutY="322.0" prefHeight="37.0" prefWidth="71.0" text="Card No. 2" />
-      <Label layoutX="467.0" layoutY="322.0" prefHeight="37.0" prefWidth="71.0" text="Card No. 3" />
-      <TextField fx:id="txt_Dcard3" layoutX="434.0" layoutY="162.0" prefHeight="25.0" prefWidth="130.0" />
-      <TextField fx:id="txt_Dcard2" layoutX="285.0" layoutY="162.0" prefHeight="25.0" prefWidth="130.0" />
-      <TextField fx:id="txt_Dcard1" layoutX="136.0" layoutY="162.0" prefHeight="25.0" prefWidth="130.0" />
-      <TextField fx:id="txt_Pcard2" layoutX="285.0" layoutY="359.0" prefHeight="25.0" prefWidth="130.0" />
-      <TextField fx:id="txt_Pcard3" layoutX="434.0" layoutY="359.0" prefHeight="25.0" prefWidth="130.0" />
-      <TextField fx:id="txt_Pcard1" layoutX="136.0" layoutY="359.0" prefHeight="25.0" prefWidth="130.0" />
-      <Label layoutX="174.0" layoutY="69.0" prefHeight="37.0" prefWidth="97.0" text="Dealer" />
-      <Label layoutX="174.0" layoutY="275.0" prefHeight="37.0" prefWidth="97.0" text="Player" />
+      <Label layoutX="174.0" layoutY="125.0" prefHeight="37.0" prefWidth="71.0" text="Card No. 1">
+         <font>
+            <Font name="System Bold" size="14.0" />
+         </font></Label>
+      <Label layoutX="315.0" layoutY="125.0" prefHeight="37.0" prefWidth="71.0" text="Card No. 2">
+         <font>
+            <Font name="System Bold" size="14.0" />
+         </font></Label>
+      <Label fx:id="lblHeaderD3" layoutX="467.0" layoutY="125.0" prefHeight="37.0" prefWidth="71.0">
+         <font>
+            <Font name="System Bold" size="14.0" />
+         </font></Label>
+      <Label fx:id="lblPCard1" layoutX="174.0" layoutY="322.0" prefHeight="37.0" prefWidth="71.0" text="Card No. 1">
+         <font>
+            <Font name="System Bold" size="14.0" />
+         </font></Label>
+      <Label layoutX="327.0" layoutY="322.0" prefHeight="37.0" prefWidth="71.0" text="Card No. 2">
+         <font>
+            <Font name="System Bold" size="14.0" />
+         </font></Label>
+      <Label fx:id="lblHeaderP3" layoutX="467.0" layoutY="322.0" prefHeight="37.0" prefWidth="71.0">
+         <font>
+            <Font name="System Bold" size="14.0" />
+         </font></Label>
+      <Label layoutX="174.0" layoutY="69.0" prefHeight="37.0" prefWidth="97.0" text="Dealer">
+         <font>
+            <Font name="System Bold" size="25.0" />
+         </font></Label>
+      <Label layoutX="174.0" layoutY="275.0" prefHeight="37.0" prefWidth="97.0" text="Player">
+         <font>
+            <Font name="System Bold" size="25.0" />
+         </font></Label>
       <Label fx:id="Massegelbl" layoutX="252.0" layoutY="285.0" prefHeight="17.0" prefWidth="71.0" />
+      <Label fx:id="Massegelblp1" layoutX="174.0" layoutY="359.0" prefHeight="27.0" prefWidth="108.0">
+         <font>
+            <Font size="18.0" />
+         </font>
+      </Label>
+      <Label fx:id="Massegelblp2" layoutX="326.0" layoutY="359.0" prefHeight="27.0" prefWidth="108.0">
+         <font>
+            <Font size="18.0" />
+         </font>
+      </Label>
+      <Label fx:id="Massegelblp3" layoutX="467.0" layoutY="359.0" prefHeight="27.0" prefWidth="108.0">
+         <font>
+            <Font size="18.0" />
+         </font>
+      </Label>
+      <Label fx:id="MassegelblD1" layoutX="174.0" layoutY="162.0" prefHeight="27.0" prefWidth="108.0">
+         <font>
+            <Font size="18.0" />
+         </font>
+      </Label>
+      <Label fx:id="MassegelblD2" layoutX="315.0" layoutY="162.0" prefHeight="27.0" prefWidth="108.0">
+         <font>
+            <Font size="18.0" />
+         </font>
+      </Label>
+      <Label fx:id="MassegelblD3" layoutX="467.0" layoutY="162.0" prefHeight="27.0" prefWidth="108.0">
+         <font>
+            <Font size="18.0" />
+         </font>
+      </Label>
    </children>
 </AnchorPane>
