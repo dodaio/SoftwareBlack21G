@@ -145,13 +145,12 @@ public class MainGameController extends AnchorPane implements Initializable {
 
 	@Override
 	public void initialize(URL location, ResourceBundle resources) {
-
 		BtnHit.setVisible(false);
 		BtnStand.setVisible(false);
-
 	}
 
-	// *******************************GUI Methods************************************
+	// *******************************GUI
+	// Methods************************************
 
 	@FXML
 	private void Exit() {
@@ -249,7 +248,7 @@ public class MainGameController extends AnchorPane implements Initializable {
 		lblHeaderD7.setText("");
 		lblHeaderD8.setText("");
 		lblHeaderD9.setText("");
-		
+
 		PScore.setText("");
 		DScore.setText("");
 	}
@@ -424,13 +423,15 @@ public class MainGameController extends AnchorPane implements Initializable {
 	public void updateDealerCards(List<Card> cardlist) {
 		int size = cardlist.size();
 		if (size == 2) {
-			MassegelblD1.setText("Hidden");
+			MassegelblD1.setText(cardlist.get(0).getcType().toString() + "  "
+					+ String.valueOf(cardlist.get(0).getcValue()));
 			MassegelblD2.setText(cardlist.get(1).getcType().toString() + "  "
 					+ String.valueOf(cardlist.get(1).getcValue()));
 		}
 
 		if (size == 3) {
-			MassegelblD1.setText("Hidden");
+			MassegelblD1.setText(cardlist.get(0).getcType().toString() + "  "
+					+ String.valueOf(cardlist.get(0).getcValue()));
 			MassegelblD2.setText(cardlist.get(1).getcType().toString() + "  "
 					+ String.valueOf(cardlist.get(1).getcValue()));
 			lblHeaderD3.setText("Card No. 3");
@@ -439,7 +440,8 @@ public class MainGameController extends AnchorPane implements Initializable {
 		}
 
 		if (size == 4) {
-			MassegelblD1.setText("Hidden");
+			MassegelblD1.setText(cardlist.get(0).getcType().toString() + "  "
+					+ String.valueOf(cardlist.get(0).getcValue()));
 			MassegelblD2.setText(cardlist.get(1).getcType().toString() + "  "
 					+ String.valueOf(cardlist.get(1).getcValue()));
 			lblHeaderD3.setText("Card No. 3");
@@ -451,7 +453,8 @@ public class MainGameController extends AnchorPane implements Initializable {
 		}
 
 		if (size == 5) {
-			MassegelblD1.setText("Hidden");
+			MassegelblD1.setText(cardlist.get(0).getcType().toString() + "  "
+					+ String.valueOf(cardlist.get(0).getcValue()));
 			MassegelblD2.setText(cardlist.get(1).getcType().toString() + "  "
 					+ String.valueOf(cardlist.get(1).getcValue()));
 			lblHeaderD3.setText("Card No. 3");
@@ -466,7 +469,8 @@ public class MainGameController extends AnchorPane implements Initializable {
 		}
 
 		if (size == 6) {
-			MassegelblD1.setText("Hidden");
+			MassegelblD1.setText(cardlist.get(0).getcType().toString() + "  "
+					+ String.valueOf(cardlist.get(0).getcValue()));
 			MassegelblD2.setText(cardlist.get(1).getcType().toString() + "  "
 					+ String.valueOf(cardlist.get(1).getcValue()));
 			lblHeaderD3.setText("Card No. 3");
@@ -484,7 +488,8 @@ public class MainGameController extends AnchorPane implements Initializable {
 		}
 
 		if (size == 7) {
-			MassegelblD1.setText("Hidden");
+			MassegelblD1.setText(cardlist.get(0).getcType().toString() + "  "
+					+ String.valueOf(cardlist.get(0).getcValue()));
 			MassegelblD2.setText(cardlist.get(1).getcType().toString() + "  "
 					+ String.valueOf(cardlist.get(1).getcValue()));
 			lblHeaderD3.setText("Card No. 3");
@@ -505,7 +510,8 @@ public class MainGameController extends AnchorPane implements Initializable {
 		}
 
 		if (size == 8) {
-			MassegelblD1.setText("Hidden");
+			MassegelblD1.setText(cardlist.get(0).getcType().toString() + "  "
+					+ String.valueOf(cardlist.get(0).getcValue()));
 			MassegelblD2.setText(cardlist.get(1).getcType().toString() + "  "
 					+ String.valueOf(cardlist.get(1).getcValue()));
 			lblHeaderD3.setText("Card No. 3");
@@ -529,7 +535,8 @@ public class MainGameController extends AnchorPane implements Initializable {
 		}
 
 		if (size == 9) {
-			MassegelblD1.setText("Hidden");
+			MassegelblD1.setText(cardlist.get(0).getcType().toString() + "  "
+					+ String.valueOf(cardlist.get(0).getcValue()));
 			MassegelblD2.setText(cardlist.get(1).getcType().toString() + "  "
 					+ String.valueOf(cardlist.get(1).getcValue()));
 			lblHeaderD3.setText("Card No. 3");
@@ -557,64 +564,52 @@ public class MainGameController extends AnchorPane implements Initializable {
 	}
 
 	/**
-	 * 
-	 * @param startcard
+	 * Change dealer's first card visibility
+	 * @param visible true for visible, false for hidden
 	 */
-	public void showDealerStartCards(Card startcard) {
-
+	protected void showDealerFirstCard(boolean visible) {
+		MassegelblD1.setVisible(visible);
 	}
 
 	/**
 	 * 
 	 */
-	public void hideButtonDeal() {
-
+	protected void hideButtonDeal() {
 		BtnDeal.setVisible(false);
-
 	}
 
 	/**
 	 * 
 	 */
-	public void hideButtonHit() {
-
+	protected void hideButtonHit() {
 		BtnHit.setVisible(false);
-
 	}
 
 	/**
 	 * 
 	 */
-	public void hideButtonStand() {
-
+	protected void hideButtonStand() {
 		BtnStand.setVisible(false);
-
 	}
 
 	/**
 	 * 
 	 */
-	public void showButtonDeal() {
-
+	protected void showButtonDeal() {
 		BtnDeal.setVisible(true);
-
 	}
 
 	/**
 	 * 
 	 */
-	public void showButtonHit() {
-
+	protected void showButtonHit() {
 		BtnHit.setVisible(true);
-
 	}
 
 	/**
 	 * 
 	 */
-	public void showButtonStand() {
-
+	protected void showButtonStand() {
 		BtnStand.setVisible(true);
-
 	}
 }

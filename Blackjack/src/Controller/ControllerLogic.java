@@ -130,6 +130,14 @@ public class ControllerLogic {
 	}
 
 	/**
+	 * Change dealer's first card visibility
+	 * @param visible true for visible, false for hidden
+	 */
+	public void showDealerFirstCard(boolean visible) {
+		view.showDealerFirstCard(visible);
+	}
+	
+	/**
 	 * Exit
 	 */
 	public void executeSysExit() {

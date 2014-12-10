@@ -182,4 +182,12 @@ public class ViewLogic {
 	public void resetGameOnUI() {
 		mgame.Resetgame();
 	}
+	
+	/**
+	 * Change dealer's first card visibility
+	 * @param visible true for visible, false for hidden
+	 */
+	public void showDealerFirstCard(boolean visible) {
+		mgame.showDealerFirstCard(visible);
+	}
 }

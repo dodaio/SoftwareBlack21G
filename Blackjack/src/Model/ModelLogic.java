@@ -47,6 +47,7 @@ public class ModelLogic {
 		controller.hitAndStandBtnVisability(false); // turn both hit and stand
 													// button off
 		controller.dealBtnVisability(true); // and deal button on.
+		controller.showDealerFirstCard(true);
 		updateDealer();
 		updatePlayer();
 	}
@@ -57,7 +58,7 @@ public class ModelLogic {
 	 */
 	public void deal() {
 		hands.reset();
-
+		controller.showDealerFirstCard(false);
 		controller.resetGameOnUI();
 
 		for (int i = 0; i < 2; i++) { // deals two cards for the player and
