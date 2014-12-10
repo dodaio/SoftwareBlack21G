@@ -63,7 +63,7 @@ public class ModelLogic {
 		}
 		controller.hitAndStandBtnVisability(true); // turn both hit and stand button on
 		controller.dealBtnVisability(false); 		// and deal button off.
-		updateDealer();
+		updateDealerCards(hands.getDealerCards());
 		updatePlayer();
 	}
 
