@@ -8,16 +8,14 @@ public class Main extends Application {
 	private Stage pstage;
 
 	@Override
-	public void start(Stage primaryStage) throws Exception {
+	public void start(Stage primaryStage) {
 		try {
 
 			pstage = primaryStage;
-			ControllerLogic cont = new ControllerLogic(pstage);
-			
+			new ControllerLogic(pstage);
 		} catch (Exception e) {
 			e.printStackTrace();
 		} finally {
-			System.out.println("[End process]");
 			System.out.println("Blackjack game is up and ready...");
 		}
 	}
