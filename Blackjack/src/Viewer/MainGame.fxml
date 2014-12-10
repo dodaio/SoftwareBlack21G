@@ -16,11 +16,6 @@
               <MenuItem mnemonicParsing="false" onAction="#Exit" text="Close" />
             </items>
           </Menu>
-          <Menu mnemonicParsing="false" text="Edit">
-            <items>
-              <MenuItem mnemonicParsing="false" text="Delete" />
-            </items>
-          </Menu>
           <Menu mnemonicParsing="false" text="Help">
             <items>
               <MenuItem mnemonicParsing="false" onAction="#showAboutWindow" text="About" />
@@ -100,6 +95,26 @@
       <Label fx:id="MassegelblD3" layoutX="467.0" layoutY="162.0" prefHeight="27.0" prefWidth="108.0">
          <font>
             <Font size="18.0" />
+         </font>
+      </Label>
+      <Label layoutX="521.0" layoutY="57.0" prefHeight="21.0" prefWidth="97.0" text="Dealer Score: ">
+         <font>
+            <Font size="15.0" />
+         </font>
+      </Label>
+      <Label layoutX="522.0" layoutY="97.0" text="Player Score: ">
+         <font>
+            <Font size="15.0" />
+         </font>
+      </Label>
+      <Label fx:id="DScore" layoutX="625.0" layoutY="59.0" prefHeight="17.0" prefWidth="48.0">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </Label>
+      <Label fx:id="PScore" layoutX="625.0" layoutY="97.0" prefHeight="17.0" prefWidth="48.0">
+         <font>
+            <Font size="14.0" />
          </font>
       </Label>
    </children>

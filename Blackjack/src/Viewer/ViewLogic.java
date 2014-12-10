@@ -114,6 +114,7 @@ public class ViewLogic {
 		
 		if(visible)                      //show button
 			mgame.showButtonDeal();
+		
 		if(!visible)                      //show button
 			mgame.hideButtonDeal();
 		

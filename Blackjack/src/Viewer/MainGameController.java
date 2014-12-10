@@ -63,6 +63,7 @@ public class MainGameController extends AnchorPane implements Initializable {
 	}
 
 	//*******************************Dealer variables************************************
+	
 	@FXML
 	Label MassegelblD1;
 	@FXML
@@ -71,6 +72,8 @@ public class MainGameController extends AnchorPane implements Initializable {
 	Label MassegelblD3;
 	@FXML
 	Label lblHeaderD3;
+	@FXML
+	Label DScore;
 	
 	//*******************************Player variables************************************
 	
@@ -82,6 +85,8 @@ public class MainGameController extends AnchorPane implements Initializable {
 	Label Massegelblp3;
 	@FXML
 	Label lblHeaderP3;
+	@FXML
+	Label PScore;
 	
 	
 	
@@ -91,12 +96,12 @@ public class MainGameController extends AnchorPane implements Initializable {
 	@Override
 	public void initialize(URL location, ResourceBundle resources) {
 		
-		MassegelblD1.setText("Hidden");
-		MassegelblD2.setText("Some Card");
+		//MassegelblD1.setText("Hidden");
+		//MassegelblD2.setText("Some Card");
 		//MassegelblD3.setText("None");
 		
-		Massegelblp1.setText("Empty");
-		Massegelblp2.setText("Empty");
+		//Massegelblp1.setText("Empty");
+		//Massegelblp2.setText("Empty");
 		//Massegelblp3.setText("Empty");
 		
 		Massegelbl.setText("Whoooooo");
@@ -123,12 +128,14 @@ public class MainGameController extends AnchorPane implements Initializable {
 	
 	@FXML
 	private void onDealClick(){
+		
 		Massegelbl.setText("Deal");
 		controllerInstance.onDealClick();
 	}
 	
 	@FXML
 	private void onStandClick(){
+		
 		Massegelbl.setText("Stand");
 		controllerInstance.onStandClick();
 	}
@@ -192,7 +199,7 @@ public class MainGameController extends AnchorPane implements Initializable {
 	 * @param score
 	 */
 	public void updatePlayerScore(int score){
-		
+		PScore.setText(String.valueOf(score));
 	}
 	
 	/**
@@ -200,7 +207,7 @@ public class MainGameController extends AnchorPane implements Initializable {
 	 * @param score
 	 */
 	public void updateDealerScore(int score){
-		
+		DScore.setText(String.valueOf(score));
 	}
 	
 	/**
@@ -211,8 +218,8 @@ public class MainGameController extends AnchorPane implements Initializable {
 		int size  = cardlist.size();
 		if(size <= 2)
 		{
-			Massegelblp1.setText(cardlist.get(0).toString());
-			Massegelblp2.setText(cardlist.get(1).toString());
+			Massegelblp1.setText(cardlist.get(0).getcType().toString() + "  " + String.valueOf(cardlist.get(0).getcValue()));
+			Massegelblp2.setText(cardlist.get(1).getcType().toString() + "  " + String.valueOf(cardlist.get(1).getcValue()));
 		}
 	}
 	
@@ -221,7 +228,12 @@ public class MainGameController extends AnchorPane implements Initializable {
 	 * @param cardlist
 	 */
 	public void updateDealerCards(List<Card> cardlist){
-		
+		int size  = cardlist.size();
+		if(size <= 2)
+		{
+			MassegelblD1.setText("Hidden");
+			MassegelblD2.setText(cardlist.get(1).getcType().toString() + "  " + String.valueOf(cardlist.get(1).getcValue()));
+		}
 	}
 	
 	/**
