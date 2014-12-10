@@ -165,6 +165,8 @@ public class MainGameController extends AnchorPane implements Initializable {
 
 	/**
 	 * RestGame
+	 * 
+	 * Clearing all labels
 	 */
 	public void Resetgame(){
 		
