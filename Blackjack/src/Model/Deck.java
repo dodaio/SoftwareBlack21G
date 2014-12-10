@@ -15,6 +15,7 @@ public class Deck {
 	 * Full C'tor.
 	 */
 	protected Deck() {
+		CardsDeck = new Card[52];
 		newDeck();
 	}
 	
@@ -48,7 +49,7 @@ public class Deck {
 		Card[] tempDeck = new Card[52];
 		if (getCardsDeck() != null)
 			for (int j = 0; j < 4; j++)
-				for (int i = 0; i < 52; i++) {
+				for (int i = 0; i < 13; i++) {
 					c = new Card(CardType.values()[j], i); // create new Card ,
 															// j is the Card ype
 															// ,i is the value

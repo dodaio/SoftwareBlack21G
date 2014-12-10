@@ -101,6 +101,9 @@ public class MainGameController extends AnchorPane implements Initializable {
 		
 		Massegelbl.setText("Whoooooo");
 		
+		BtnHit.setVisible(false);
+		BtnStand.setVisible(false);
+		
 	}
 	
 	
@@ -205,7 +208,12 @@ public class MainGameController extends AnchorPane implements Initializable {
 	 * @param cardlist
 	 */
 	public void updatePlayerCards(List<Card> cardlist){
-		
+		int size  = cardlist.size();
+		if(size <= 2)
+		{
+			Massegelblp1.setText(cardlist.get(0).toString());
+			Massegelblp2.setText(cardlist.get(1).toString());
+		}
 	}
 	
 	/**

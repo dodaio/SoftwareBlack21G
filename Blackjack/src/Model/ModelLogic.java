@@ -61,8 +61,8 @@ public class ModelLogic {
 			hands.hitDealer();
 			hands.hitPlayer();
 		}
-		controller.hitAndStandBtnVisability(false); // turn both hit and stand button on
-		controller.dealBtnVisability(true); 		// and deal button off.
+		controller.hitAndStandBtnVisability(true); // turn both hit and stand button on
+		controller.dealBtnVisability(false); 		// and deal button off.
 	}
 
 	/**
