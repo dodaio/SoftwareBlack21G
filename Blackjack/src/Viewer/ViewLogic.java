@@ -150,7 +150,7 @@ public class ViewLogic {
 			mgame.showButtonStand();
 		}
 		
-		if(!visible) 				//hide button
+		else 				//hide button
 		{
 			mgame.hideButtonHit();
 			mgame.hideButtonStand();

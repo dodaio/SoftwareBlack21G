@@ -78,7 +78,7 @@ public class ModelLogic {
 		if (score > 21)  // player bust
 			endRound(); // end round and declare result to player. result calculated in endRound();
 		if (score == 21) 	
-			controller.hitBtnVisability(false); // player cant hit
+			controller.hitBtnVisability(true); // player cant hit
 	}
 
 	/**

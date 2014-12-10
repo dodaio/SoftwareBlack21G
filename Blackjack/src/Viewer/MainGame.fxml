@@ -33,7 +33,6 @@
             <Insets />
          </opaqueInsets>
       </HBox>
-      <StackPane layoutX="44.0" layoutY="87.0" prefHeight="150.0" prefWidth="130.0" />
       <Label layoutX="174.0" layoutY="125.0" prefHeight="37.0" prefWidth="71.0" text="Card No. 1">
          <font>
             <Font name="System Bold" size="14.0" />
@@ -117,5 +116,11 @@
             <Font size="14.0" />
          </font>
       </Label>
+      <Label layoutX="42.0" layoutY="176.0" text="Result">
+         <font>
+            <Font size="18.0" />
+         </font>
+      </Label>
+      <Label fx:id="lblMsg" layoutX="42.0" layoutY="213.0" prefHeight="27.0" prefWidth="61.0" />
    </children>
 </AnchorPane>

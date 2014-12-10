@@ -54,6 +54,9 @@ public class MainGameController extends AnchorPane implements Initializable {
 	@FXML
 	Button BtnStand;
 	
+	@FXML
+	Label lblMsg;
+	
 	//*******************************C'tor***********************************************
 	
 	public MainGameController() {
@@ -146,7 +149,7 @@ public class MainGameController extends AnchorPane implements Initializable {
 	 * @param str
 	 */
 	protected void printGameResult(boolean result, String msg){
-		
+		lblMsg.setText(msg);
 	}
 	
 	/**
@@ -191,6 +194,8 @@ public class MainGameController extends AnchorPane implements Initializable {
 		Massegelblp2.setText("");
 		
 		Massegelblp3.setText("");
+		
+		lblMsg.setText("");
 	}
 	
 	
@@ -258,7 +263,7 @@ public class MainGameController extends AnchorPane implements Initializable {
 	 */
 	public void hideButtonHit(){
 		
-		BtnDeal.setVisible(false);
+		BtnHit.setVisible(false);
 		
 	}
 	
@@ -267,7 +272,7 @@ public class MainGameController extends AnchorPane implements Initializable {
 	 */
 	public void hideButtonStand(){
 		
-		BtnDeal.setVisible(false);
+		BtnStand.setVisible(false);
 		
 	}
 	
