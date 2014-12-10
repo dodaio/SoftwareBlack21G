@@ -48,6 +48,11 @@ public class MainGameController extends AnchorPane implements Initializable {
 	@FXML
 	Button BtnDeal;
 	
+	@FXML
+	Button BtnHit;
+	
+	@FXML
+	Button BtnStand;
 	
 	//*******************************C'tor***********************************************
 	
@@ -55,7 +60,6 @@ public class MainGameController extends AnchorPane implements Initializable {
 		
 		controllerInstance = ViewLogic.controller;
 		loaclstage = ViewLogic.mstage;
-		
 	}
 
 	//*******************************Dealer variables************************************
@@ -135,6 +139,9 @@ public class MainGameController extends AnchorPane implements Initializable {
 		
 	}
 	
+	/**
+	 * display About window
+	 */
 	@FXML
 	private void showAboutWindow(){
 		try {
@@ -156,6 +163,25 @@ public class MainGameController extends AnchorPane implements Initializable {
 
 	//*******************************Methods************************************
 
+	/**
+	 * RestGame
+	 */
+	public void Resetgame(){
+		
+		MassegelblD1.setText("");
+		
+		MassegelblD2.setText("");
+		
+		MassegelblD3.setText("");
+		
+		Massegelblp1.setText("");
+		
+		Massegelblp2.setText("");
+		
+		Massegelblp3.setText("");
+	}
+	
+	
 	/**
 	 * 
 	 * @param score
@@ -202,6 +228,51 @@ public class MainGameController extends AnchorPane implements Initializable {
 	public void hideButtonDeal(){
 		
 		BtnDeal.setVisible(false);
+		
+	}
+	
+	/**
+	 * 
+	 */
+	public void hideButtonHit(){
+		
+		BtnDeal.setVisible(false);
+		
+	}
+	
+	/**
+	 * 
+	 */
+	public void hideButtonStand(){
+		
+		BtnDeal.setVisible(false);
+		
+	}
+	
+	/**
+	 * 
+	 */
+	public void showButtonDeal(){
+		
+		BtnDeal.setVisible(true);
+		
+	}
+	
+	/**
+	 * 
+	 */
+	public void showButtonHit(){
+		
+		BtnHit.setVisible(true);
+		
+	}
+	
+	/**
+	 * 
+	 */
+	public void showButtonStand(){
+		
+		BtnStand.setVisible(true);
 		
 	}
 }
