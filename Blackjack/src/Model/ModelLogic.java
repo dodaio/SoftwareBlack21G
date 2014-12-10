@@ -47,6 +47,8 @@ public class ModelLogic {
 		announceResualt(result); // pass it to controller and view logic
 		controller.hitAndStandBtnVisability(false); // turn both hit and stand button off
 		controller.dealBtnVisability(true); 		// and deal button on.
+		updateDealer();
+		updatePlayer();
 	}
 
 	/**
