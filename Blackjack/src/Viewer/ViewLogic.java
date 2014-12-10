@@ -84,10 +84,25 @@ public class ViewLogic {
 	}
 	
 	/**
-	 * Sets deal button visibility
+	 * Sets DEAL button visibility
 	 * @param visible true to set visible, false to disable 
 	 */
 	public void dealBtnVisability(boolean visible) {
+		
+	}
+	/**
+	 * Sets HIT button visibility
+	 * @param visible true to set visible, false to disable 
+	 */
+	public void hitBtnVisability(boolean visible) {
+		
+	}
+	
+	/**
+	 * Sets HIT AND STAND button visibility
+	 * @param visible true to set visible, false to disable 
+	 */
+	public void hitAndStandBtnVisability(boolean visible) {
 		
 	}
 }

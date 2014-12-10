@@ -19,8 +19,8 @@ public class Deck {
 	}
 	
 	protected void newDeck() {
-		this.CardsDeck = reset(); // init deck
-		this.CardsDeck = shuffleArray(this.getCardsDeck()); // shuffle deck
+		this.CardsDeck = initDeck(); // init deck
+		this.shuffleArray(); // shuffle deck
 	}
 
 	/**
@@ -37,8 +37,12 @@ public class Deck {
 	protected void setCardsDeck(Card[] CardsDeck) {
 		this.CardsDeck = CardsDeck;
 	}
-
-	private Card[] reset() {
+	
+	/**
+	 * Create a sorted array of 52 cards.
+	 * @return
+	 */
+	private Card[] initDeck() {
 		Card c;
 		int k = 0;
 		Card[] tempDeck = new Card[52];
@@ -55,19 +59,18 @@ public class Deck {
 	}
 
 	/**
-	 * method to shuffle the deck.
+	 * method to shuffle the array of cards (the deck).
 	 */
-	protected Card[] shuffleArray(Card[] tempDeck) {
+	protected void shuffleArray() {
 		Random rnd = new Random();
-		for (int i = tempDeck.length - 1; i > 0; i--) {
+		for (int i = getCardsDeck().length - 1; i > 0; i--) {
 			int index = rnd.nextInt(i + 1);
 			// Simple swap
-			Card c = tempDeck[index];
-			tempDeck[index] = tempDeck[i];
-			tempDeck[i] = c;
+			Card c = getCardsDeck()[index];
+			getCardsDeck()[index] = getCardsDeck()[i];
+			getCardsDeck()[i] = c;
 		}
 		deckIndex = 0;
-		return tempDeck;
 	}
 	
 	/**
@@ -75,7 +78,7 @@ public class Deck {
 	 */
 	protected Card getCard(){
 		if(getCardsDeck() != null)
-			return getCardsDeck()[deckIndex++]; // deckIndex is re-initilized at shuffle()
+			return getCardsDeck()[deckIndex++]; // deckIndex is re-initilized at shuffleArray()
 		return null; // if deck doesn't exists.
 	}
 

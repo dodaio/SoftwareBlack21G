@@ -54,12 +54,13 @@ public class Hands {
 	}
 
 	/**
-	 * Reseting the hands after each round
+	 * Reseting the hands and the deck after each round.
+	 * the deck stays the same array, only shuffeld and index is set to 0;
 	 */
 	protected void reset() {
 		getDealerCards().clear();
 		getPlayerCards().clear();
-		deck.newDeck();
+		deck.shuffleArray();
 	}
 
 	/**
@@ -130,22 +131,4 @@ public class Hands {
 		return i;
 	}
 
-	/**
-	 * returns game result
-	 * 
-	 * @return true if player wins, otherwise false
-	 */
-	protected boolean calculteGameResualt() {
-		int dealerScore = getDealerScore();
-		int playerScore = getPlayerScore();
-
-		if (dealerScore == 21
-				|| playerScore > 21
-				|| (playerScore < 21 && dealerScore < 21 && dealerScore > playerScore)) {
-			return false; // lose
-		} else {
-			return true; // win
-		}
-
-	}
 }
