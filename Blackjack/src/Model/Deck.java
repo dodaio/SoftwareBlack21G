@@ -49,9 +49,9 @@ public class Deck {
 		Card[] tempDeck = new Card[52];
 		if (getCardsDeck() != null)
 			for (int j = 0; j < 4; j++)
-				for (int i = 0; i < 13; i++) {
+				for (int i = 1; i < 14; i++) {
 					c = new Card(CardType.values()[j], i); // create new Card ,
-															// j is the Card ype
+															// j is the Card type
 															// ,i is the value
 					tempDeck[k++] = c; // inserting the Cards to our temp sorted
 										// deck;

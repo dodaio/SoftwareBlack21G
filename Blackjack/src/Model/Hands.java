@@ -83,24 +83,24 @@ public class Hands {
 	 * @return the dealer simple score
 	 */
 	protected int getDealerScore() {
-		int i = 0, cValue;
+		int score = 0, cValue;
 		for (Card card : dealerCards) {
 			cValue = card.getcValue();
 			if (cValue > 10) // if royalty
-				i += 10;
+				score += 10;
 			else {
 				if (cValue == 1) // if ace
-					if (i > 10) // hand won't burst with ace as 11
-						i += 11;
+					if (score > 10) // hand won't burst with ace as 11
+						score += 11;
 					else
 						// hand will burst with ace as 11
-						i += 1;
+						score += 1;
 				else
 					// everything else: value (2-10)
-					i += cValue;
+					score += cValue;
 			}
 		}
-		return i;
+		return score;
 	}
 
 	/**
