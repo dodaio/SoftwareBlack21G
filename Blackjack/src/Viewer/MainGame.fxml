@@ -7,9 +7,9 @@
 <?import javafx.scene.layout.*?>
 <?import javafx.scene.layout.AnchorPane?>
 
-<AnchorPane prefHeight="530.0" prefWidth="723.0" styleClass="background" stylesheets="@MainGame.css" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Viewer.MainGameController">
+<AnchorPane prefHeight="530.0" prefWidth="874.0" styleClass="background" stylesheets="@MainGame.css" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Viewer.MainGameController">
    <children>
-      <MenuBar prefHeight="27.0" prefWidth="723.0">
+      <MenuBar prefHeight="27.0" prefWidth="874.0">
         <menus>
           <Menu mnemonicParsing="false" text="File">
             <items>
@@ -23,7 +23,7 @@
           </Menu>
         </menus>
       </MenuBar>
-      <HBox alignment="CENTER" layoutX="174.0" layoutY="441.0" prefHeight="53.0" prefWidth="376.0" spacing="30.0">
+      <HBox alignment="CENTER" layoutX="271.0" layoutY="439.0" prefHeight="53.0" prefWidth="376.0" spacing="30.0">
          <children>
             <Button fx:id="BtnHit" alignment="CENTER" contentDisplay="CENTER" graphicTextGap="8.0" mnemonicParsing="false" onAction="#onHitClick" prefHeight="37.0" prefWidth="61.0" text="Hit" textAlignment="CENTER" />
             <Button fx:id="BtnDeal" alignment="CENTER" contentDisplay="CENTER" graphicTextGap="8.0" mnemonicParsing="false" onAction="#onDealClick" prefHeight="37.0" prefWidth="61.0" text="Deal" textAlignment="CENTER" />
@@ -33,27 +33,19 @@
             <Insets />
          </opaqueInsets>
       </HBox>
-      <Label layoutX="174.0" layoutY="125.0" prefHeight="37.0" prefWidth="71.0" text="Card No. 1">
+      <Label layoutX="66.0" layoutY="130.0" prefHeight="37.0" prefWidth="71.0" text="Card No. 1">
          <font>
             <Font name="System Bold" size="14.0" />
          </font></Label>
-      <Label layoutX="315.0" layoutY="125.0" prefHeight="37.0" prefWidth="71.0" text="Card No. 2">
+      <Label layoutX="169.0" layoutY="130.0" prefHeight="37.0" prefWidth="71.0" text="Card No. 2">
          <font>
             <Font name="System Bold" size="14.0" />
          </font></Label>
-      <Label fx:id="lblHeaderD3" layoutX="467.0" layoutY="125.0" prefHeight="37.0" prefWidth="71.0">
+      <Label fx:id="lblPCard1" layoutX="73.0" layoutY="327.0" prefHeight="37.0" prefWidth="71.0" text="Card No. 1">
          <font>
             <Font name="System Bold" size="14.0" />
          </font></Label>
-      <Label fx:id="lblPCard1" layoutX="174.0" layoutY="322.0" prefHeight="37.0" prefWidth="71.0" text="Card No. 1">
-         <font>
-            <Font name="System Bold" size="14.0" />
-         </font></Label>
-      <Label layoutX="327.0" layoutY="322.0" prefHeight="37.0" prefWidth="71.0" text="Card No. 2">
-         <font>
-            <Font name="System Bold" size="14.0" />
-         </font></Label>
-      <Label fx:id="lblHeaderP3" layoutX="467.0" layoutY="322.0" prefHeight="37.0" prefWidth="71.0">
+      <Label layoutX="182.0" layoutY="327.0" prefHeight="37.0" prefWidth="71.0" text="Card No. 2">
          <font>
             <Font name="System Bold" size="14.0" />
          </font></Label>
@@ -66,44 +58,34 @@
             <Font name="System Bold" size="25.0" />
          </font></Label>
       <Label fx:id="Massegelbl" layoutX="252.0" layoutY="285.0" prefHeight="17.0" prefWidth="71.0" />
-      <Label fx:id="Massegelblp1" layoutX="174.0" layoutY="359.0" prefHeight="27.0" prefWidth="108.0">
+      <Label fx:id="Massegelblp1" layoutX="73.0" layoutY="364.0" prefHeight="27.0" prefWidth="108.0">
          <font>
             <Font size="18.0" />
          </font>
       </Label>
-      <Label fx:id="Massegelblp2" layoutX="326.0" layoutY="359.0" prefHeight="27.0" prefWidth="108.0">
+      <Label fx:id="Massegelblp2" layoutX="180.0" layoutY="364.0" prefHeight="27.0" prefWidth="108.0">
          <font>
             <Font size="18.0" />
          </font>
       </Label>
-      <Label fx:id="Massegelblp3" layoutX="467.0" layoutY="359.0" prefHeight="27.0" prefWidth="108.0">
+      <Label fx:id="MassegelblD1" layoutX="66.0" layoutY="167.0" prefHeight="27.0" prefWidth="108.0">
          <font>
             <Font size="18.0" />
          </font>
       </Label>
-      <Label fx:id="MassegelblD1" layoutX="174.0" layoutY="162.0" prefHeight="27.0" prefWidth="108.0">
-         <font>
-            <Font size="18.0" />
-         </font>
-      </Label>
-      <Label fx:id="MassegelblD2" layoutX="315.0" layoutY="162.0" prefHeight="27.0" prefWidth="108.0">
-         <font>
-            <Font size="18.0" />
-         </font>
-      </Label>
-      <Label fx:id="MassegelblD3" layoutX="467.0" layoutY="162.0" prefHeight="27.0" prefWidth="108.0">
+      <Label fx:id="MassegelblD2" layoutX="169.0" layoutY="167.0" prefHeight="27.0" prefWidth="108.0">
          <font>
             <Font size="18.0" />
          </font>
       </Label>
       <Label layoutX="521.0" layoutY="57.0" prefHeight="21.0" prefWidth="97.0" text="Dealer Score: ">
          <font>
-            <Font size="15.0" />
+            <Font name="System Bold" size="15.0" />
          </font>
       </Label>
       <Label layoutX="522.0" layoutY="97.0" text="Player Score: ">
          <font>
-            <Font size="15.0" />
+            <Font name="System Bold" size="15.0" />
          </font>
       </Label>
       <Label fx:id="DScore" layoutX="625.0" layoutY="59.0" prefHeight="17.0" prefWidth="48.0">
@@ -116,11 +98,164 @@
             <Font size="14.0" />
          </font>
       </Label>
-      <Label layoutX="42.0" layoutY="176.0" text="Result">
+      <Label layoutX="739.0" layoutY="56.0" text="Result">
          <font>
             <Font size="18.0" />
          </font>
       </Label>
-      <Label fx:id="lblMsg" layoutX="42.0" layoutY="213.0" prefHeight="27.0" prefWidth="61.0" />
+      <Label fx:id="lblMsg" layoutX="703.0" layoutY="84.0" prefHeight="27.0" prefWidth="121.0">
+         <font>
+            <Font name="System Bold Italic" size="18.0" />
+         </font></Label>
+      <Label fx:id="Massegelblp3" layoutX="269.0" layoutY="364.0" prefHeight="27.0" prefWidth="108.0">
+         <font>
+            <Font size="18.0" />
+         </font>
+      </Label>
+      <Label fx:id="lblHeaderP3" layoutX="271.0" layoutY="327.0" prefHeight="37.0" prefWidth="71.0">
+         <font>
+            <Font name="System Bold" size="14.0" />
+         </font>
+      </Label>
+      <Label fx:id="Massegelblp4" layoutX="353.0" layoutY="365.0" prefHeight="27.0" prefWidth="108.0">
+         <font>
+            <Font size="18.0" />
+         </font>
+      </Label>
+      <Label fx:id="lblHeaderP4" layoutX="364.0" layoutY="327.0" prefHeight="37.0" prefWidth="71.0">
+         <font>
+            <Font name="System Bold" size="14.0" />
+         </font>
+      </Label>
+      <Label fx:id="Massegelblp5" layoutX="460.0" layoutY="365.0" prefHeight="27.0" prefWidth="108.0">
+         <font>
+            <Font size="18.0" />
+         </font>
+      </Label>
+      <Label fx:id="lblHeaderP5" layoutX="461.0" layoutY="327.0" prefHeight="37.0" prefWidth="71.0">
+         <font>
+            <Font name="System Bold" size="14.0" />
+         </font>
+      </Label>
+      <Label fx:id="Massegelblp6" layoutX="557.0" layoutY="365.0" prefHeight="27.0" prefWidth="108.0">
+         <font>
+            <Font size="18.0" />
+         </font>
+      </Label>
+      <Label fx:id="lblHeaderP6" layoutX="559.0" layoutY="327.0" prefHeight="37.0" prefWidth="71.0">
+         <font>
+            <Font name="System Bold" size="14.0" />
+         </font>
+      </Label>
+      <Label fx:id="Massegelblp7" layoutX="644.0" layoutY="365.0" prefHeight="27.0" prefWidth="108.0">
+         <font>
+            <Font size="18.0" />
+         </font>
+      </Label>
+      <Label fx:id="lblHeaderP7" layoutX="651.0" layoutY="327.0" prefHeight="37.0" prefWidth="71.0">
+         <font>
+            <Font name="System Bold" size="14.0" />
+         </font>
+      </Label>
+      <Label fx:id="Massegelblp8" layoutX="752.0" layoutY="364.0" prefHeight="27.0" prefWidth="108.0">
+         <font>
+            <Font size="18.0" />
+         </font>
+      </Label>
+      <Label fx:id="lblHeaderP8" layoutX="754.0" layoutY="327.0" prefHeight="37.0" prefWidth="71.0">
+         <font>
+            <Font name="System Bold" size="14.0" />
+         </font>
+      </Label>
+      <Label fx:id="Massegelblp9" layoutX="752.0" layoutY="439.0" prefHeight="27.0" prefWidth="108.0">
+         <font>
+            <Font size="18.0" />
+         </font>
+      </Label>
+      <Label fx:id="lblHeaderP9" layoutX="754.0" layoutY="409.0" prefHeight="37.0" prefWidth="71.0">
+         <font>
+            <Font name="System Bold" size="14.0" />
+         </font>
+      </Label>
+      <Label fx:id="MassegelblD32" layoutX="443.0" layoutY="172.0" prefHeight="27.0" prefWidth="108.0">
+         <font>
+            <Font size="18.0" />
+         </font>
+      </Label>
+      <Label fx:id="lblHeaderD32" layoutX="443.0" layoutY="135.0" prefHeight="37.0" prefWidth="71.0">
+         <font>
+            <Font name="System Bold" size="14.0" />
+         </font>
+      </Label>
+      <Label fx:id="MassegelblD3" layoutX="256.0" layoutY="167.0" prefHeight="27.0" prefWidth="108.0">
+         <font>
+            <Font size="18.0" />
+         </font>
+      </Label>
+      <Label fx:id="lblHeaderD3" layoutX="256.0" layoutY="130.0" prefHeight="37.0" prefWidth="71.0">
+         <font>
+            <Font name="System Bold" size="14.0" />
+         </font>
+      </Label>
+      <Label fx:id="MassegelblD4" layoutX="353.0" layoutY="167.0" prefHeight="27.0" prefWidth="108.0">
+         <font>
+            <Font size="18.0" />
+         </font>
+      </Label>
+      <Label fx:id="lblHeaderD4" layoutX="353.0" layoutY="130.0" prefHeight="37.0" prefWidth="71.0">
+         <font>
+            <Font name="System Bold" size="14.0" />
+         </font>
+      </Label>
+      <Label fx:id="MassegelblD5" layoutX="451.0" layoutY="167.0" prefHeight="27.0" prefWidth="108.0">
+         <font>
+            <Font size="18.0" />
+         </font>
+      </Label>
+      <Label fx:id="lblHeaderD5" layoutX="451.0" layoutY="130.0" prefHeight="37.0" prefWidth="71.0">
+         <font>
+            <Font name="System Bold" size="14.0" />
+         </font>
+      </Label>
+      <Label fx:id="MassegelblD6" layoutX="551.0" layoutY="167.0" prefHeight="27.0" prefWidth="108.0">
+         <font>
+            <Font size="18.0" />
+         </font>
+      </Label>
+      <Label fx:id="lblHeaderD6" layoutX="551.0" layoutY="130.0" prefHeight="37.0" prefWidth="71.0">
+         <font>
+            <Font name="System Bold" size="14.0" />
+         </font>
+      </Label>
+      <Label fx:id="MassegelblD7" layoutX="644.0" layoutY="167.0" prefHeight="27.0" prefWidth="108.0">
+         <font>
+            <Font size="18.0" />
+         </font>
+      </Label>
+      <Label fx:id="lblHeaderD7" layoutX="644.0" layoutY="130.0" prefHeight="37.0" prefWidth="71.0">
+         <font>
+            <Font name="System Bold" size="14.0" />
+         </font>
+      </Label>
+      <Label fx:id="lblHeaderD8" layoutX="746.0" layoutY="130.0" prefHeight="37.0" prefWidth="71.0">
+         <font>
+            <Font name="System Bold" size="14.0" />
+         </font>
+      </Label>
+      <Label fx:id="MassegelblD8" layoutX="746.0" layoutY="167.0" prefHeight="27.0" prefWidth="108.0">
+         <font>
+            <Font size="18.0" />
+         </font>
+      </Label>
+      <Label fx:id="lblHeaderD9" layoutX="746.0" layoutY="201.0" prefHeight="37.0" prefWidth="71.0">
+         <font>
+            <Font name="System Bold" size="14.0" />
+         </font>
+      </Label>
+      <Label fx:id="MassegelblD9" layoutX="746.0" layoutY="238.0" prefHeight="27.0" prefWidth="108.0">
+         <font>
+            <Font size="18.0" />
+         </font>
+      </Label>
    </children>
 </AnchorPane>

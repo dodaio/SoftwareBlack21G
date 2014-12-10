@@ -57,6 +57,7 @@ public class MainGameController extends AnchorPane implements Initializable {
 	@FXML
 	Label lblMsg;
 	
+	
 	//*******************************C'tor***********************************************
 	
 	public MainGameController() {
@@ -74,7 +75,31 @@ public class MainGameController extends AnchorPane implements Initializable {
 	@FXML
 	Label MassegelblD3;
 	@FXML
+	Label MassegelblD4;
+	@FXML
+	Label MassegelblD5;
+	@FXML
+	Label MassegelblD6;
+	@FXML
+	Label MassegelblD7;
+	@FXML
+	Label MassegelblD8;
+	@FXML
+	Label MassegelblD9;
+	@FXML
 	Label lblHeaderD3;
+	@FXML
+	Label lblHeaderD4;
+	@FXML
+	Label lblHeaderD5;
+	@FXML
+	Label lblHeaderD6;
+	@FXML
+	Label lblHeaderD7;
+	@FXML
+	Label lblHeaderD8;
+	@FXML
+	Label lblHeaderD9;
 	@FXML
 	Label DScore;
 	
@@ -87,7 +112,31 @@ public class MainGameController extends AnchorPane implements Initializable {
 	@FXML
 	Label Massegelblp3;
 	@FXML
+	Label Massegelblp4;
+	@FXML
+	Label Massegelblp5;
+	@FXML
+	Label Massegelblp6;
+	@FXML
+	Label Massegelblp7;
+	@FXML
+	Label Massegelblp8;
+	@FXML
+	Label Massegelblp9;
+	@FXML
 	Label lblHeaderP3;
+	@FXML
+	Label lblHeaderP4;
+	@FXML
+	Label lblHeaderP5;
+	@FXML
+	Label lblHeaderP6;
+	@FXML
+	Label lblHeaderP7;
+	@FXML
+	Label lblHeaderP8;
+	@FXML
+	Label lblHeaderP9;
 	@FXML
 	Label PScore;
 	
@@ -107,7 +156,7 @@ public class MainGameController extends AnchorPane implements Initializable {
 		//Massegelblp2.setText("Empty");
 		//Massegelblp3.setText("Empty");
 		
-		Massegelbl.setText("Whoooooo");
+		//Massegelbl.setText("Whoooooo");
 		
 		BtnHit.setVisible(false);
 		BtnStand.setVisible(false);
@@ -184,18 +233,42 @@ public class MainGameController extends AnchorPane implements Initializable {
 	public void Resetgame(){
 		
 		MassegelblD1.setText("");
-		
 		MassegelblD2.setText("");
-		
 		MassegelblD3.setText("");
+		MassegelblD4.setText("");
+		MassegelblD5.setText("");
+		MassegelblD6.setText("");
+		MassegelblD7.setText("");
+		MassegelblD8.setText("");
+		MassegelblD9.setText("");
 		
 		Massegelblp1.setText("");
-		
 		Massegelblp2.setText("");
-		
 		Massegelblp3.setText("");
+		Massegelblp4.setText("");
+		Massegelblp5.setText("");
+		Massegelblp6.setText("");
+		Massegelblp7.setText("");
+		Massegelblp8.setText("");
+		Massegelblp9.setText("");
 		
 		lblMsg.setText("");
+		
+		lblHeaderP3.setText("");
+		lblHeaderP4.setText("");
+		lblHeaderP5.setText("");
+		lblHeaderP6.setText("");
+		lblHeaderP7.setText("");
+		lblHeaderP8.setText("");
+		lblHeaderP9.setText("");
+		
+		lblHeaderD3.setText("");
+		lblHeaderD4.setText("");
+		lblHeaderD5.setText("");
+		lblHeaderD6.setText("");
+		lblHeaderD7.setText("");
+		lblHeaderD8.setText("");
+		lblHeaderD9.setText("");
 	}
 	
 	
@@ -221,10 +294,108 @@ public class MainGameController extends AnchorPane implements Initializable {
 	 */
 	public void updatePlayerCards(List<Card> cardlist){
 		int size  = cardlist.size();
-		if(size <= 2)
+		if(size == 2)
 		{
 			Massegelblp1.setText(cardlist.get(0).getcType().toString() + "  " + String.valueOf(cardlist.get(0).getcValue()));
 			Massegelblp2.setText(cardlist.get(1).getcType().toString() + "  " + String.valueOf(cardlist.get(1).getcValue()));
+		}
+		
+		if(size == 3)
+		{
+			Massegelblp1.setText(cardlist.get(0).getcType().toString() + "  " + String.valueOf(cardlist.get(0).getcValue()));
+			Massegelblp2.setText(cardlist.get(1).getcType().toString() + "  " + String.valueOf(cardlist.get(1).getcValue()));
+			lblHeaderP3.setText("Card No. 3");
+			Massegelblp3.setText(cardlist.get(2).getcType().toString() + "  " + String.valueOf(cardlist.get(2).getcValue()));
+		}
+		
+		if(size == 4)
+		{
+			Massegelblp1.setText(cardlist.get(0).getcType().toString() + "  " + String.valueOf(cardlist.get(0).getcValue()));
+			Massegelblp2.setText(cardlist.get(1).getcType().toString() + "  " + String.valueOf(cardlist.get(1).getcValue()));
+			lblHeaderP3.setText("Card No. 3");
+			Massegelblp3.setText(cardlist.get(2).getcType().toString() + "  " + String.valueOf(cardlist.get(2).getcValue()));
+			lblHeaderP4.setText("Card No. 4");
+			Massegelblp4.setText(cardlist.get(3).getcType().toString() + "  " + String.valueOf(cardlist.get(3).getcValue()));
+		}
+		
+		if(size == 5)
+		{
+			Massegelblp1.setText(cardlist.get(0).getcType().toString() + "  " + String.valueOf(cardlist.get(0).getcValue()));
+			Massegelblp2.setText(cardlist.get(1).getcType().toString() + "  " + String.valueOf(cardlist.get(1).getcValue()));
+			lblHeaderP3.setText("Card No. 3");
+			Massegelblp3.setText(cardlist.get(2).getcType().toString() + "  " + String.valueOf(cardlist.get(1).getcValue()));
+			lblHeaderP4.setText("Card No. 4");
+			Massegelblp4.setText(cardlist.get(3).getcType().toString() + "  " + String.valueOf(cardlist.get(3).getcValue()));
+			lblHeaderP5.setText("Card No. 5");
+			Massegelblp5.setText(cardlist.get(4).getcType().toString() + "  " + String.valueOf(cardlist.get(4).getcValue()));
+		}
+		
+		if(size == 6)
+		{
+			Massegelblp1.setText(cardlist.get(0).getcType().toString() + "  " + String.valueOf(cardlist.get(0).getcValue()));
+			Massegelblp2.setText(cardlist.get(1).getcType().toString() + "  " + String.valueOf(cardlist.get(1).getcValue()));
+			lblHeaderP3.setText("Card No. 3");
+			Massegelblp3.setText(cardlist.get(2).getcType().toString() + "  " + String.valueOf(cardlist.get(1).getcValue()));
+			lblHeaderP4.setText("Card No. 4");
+			Massegelblp4.setText(cardlist.get(3).getcType().toString() + "  " + String.valueOf(cardlist.get(3).getcValue()));
+			lblHeaderP5.setText("Card No. 5");
+			Massegelblp5.setText(cardlist.get(4).getcType().toString() + "  " + String.valueOf(cardlist.get(4).getcValue()));
+			lblHeaderP6.setText("Card No. 6");
+			Massegelblp6.setText(cardlist.get(5).getcType().toString() + "  " + String.valueOf(cardlist.get(5).getcValue()));
+		}
+		
+		if(size == 7)
+		{
+			Massegelblp1.setText(cardlist.get(0).getcType().toString() + "  " + String.valueOf(cardlist.get(0).getcValue()));
+			Massegelblp2.setText(cardlist.get(1).getcType().toString() + "  " + String.valueOf(cardlist.get(1).getcValue()));
+			lblHeaderP3.setText("Card No. 3");
+			Massegelblp3.setText(cardlist.get(2).getcType().toString() + "  " + String.valueOf(cardlist.get(1).getcValue()));
+			lblHeaderP4.setText("Card No. 4");
+			Massegelblp4.setText(cardlist.get(3).getcType().toString() + "  " + String.valueOf(cardlist.get(3).getcValue()));
+			lblHeaderP5.setText("Card No. 5");
+			Massegelblp5.setText(cardlist.get(4).getcType().toString() + "  " + String.valueOf(cardlist.get(4).getcValue()));
+			lblHeaderP6.setText("Card No. 6");
+			Massegelblp6.setText(cardlist.get(5).getcType().toString() + "  " + String.valueOf(cardlist.get(5).getcValue()));
+			lblHeaderP7.setText("Card No. 7");
+			Massegelblp7.setText(cardlist.get(6).getcType().toString() + "  " + String.valueOf(cardlist.get(6).getcValue()));
+		}
+		
+		if(size == 8)
+		{
+			Massegelblp1.setText(cardlist.get(0).getcType().toString() + "  " + String.valueOf(cardlist.get(0).getcValue()));
+			Massegelblp2.setText(cardlist.get(1).getcType().toString() + "  " + String.valueOf(cardlist.get(1).getcValue()));
+			lblHeaderP3.setText("Card No. 3");
+			Massegelblp3.setText(cardlist.get(2).getcType().toString() + "  " + String.valueOf(cardlist.get(1).getcValue()));
+			lblHeaderP4.setText("Card No. 4");
+			Massegelblp4.setText(cardlist.get(3).getcType().toString() + "  " + String.valueOf(cardlist.get(3).getcValue()));
+			lblHeaderP5.setText("Card No. 5");
+			Massegelblp5.setText(cardlist.get(4).getcType().toString() + "  " + String.valueOf(cardlist.get(4).getcValue()));
+			lblHeaderP6.setText("Card No. 6");
+			Massegelblp6.setText(cardlist.get(5).getcType().toString() + "  " + String.valueOf(cardlist.get(5).getcValue()));
+			lblHeaderP7.setText("Card No. 7");
+			Massegelblp7.setText(cardlist.get(6).getcType().toString() + "  " + String.valueOf(cardlist.get(6).getcValue()));
+			lblHeaderP8.setText("Card No. 8");
+			Massegelblp8.setText(cardlist.get(7).getcType().toString() + "  " + String.valueOf(cardlist.get(7).getcValue()));
+		}
+		
+		if(size == 9)
+		{
+			Massegelblp1.setText(cardlist.get(0).getcType().toString() + "  " + String.valueOf(cardlist.get(0).getcValue()));
+			Massegelblp2.setText(cardlist.get(1).getcType().toString() + "  " + String.valueOf(cardlist.get(1).getcValue()));
+			lblHeaderP3.setText("Card No. 3");
+			Massegelblp3.setText(cardlist.get(2).getcType().toString() + "  " + String.valueOf(cardlist.get(1).getcValue()));
+			lblHeaderP4.setText("Card No. 4");
+			Massegelblp4.setText(cardlist.get(3).getcType().toString() + "  " + String.valueOf(cardlist.get(3).getcValue()));
+			lblHeaderP5.setText("Card No. 5");
+			Massegelblp5.setText(cardlist.get(4).getcType().toString() + "  " + String.valueOf(cardlist.get(4).getcValue()));
+			lblHeaderP6.setText("Card No. 6");
+			Massegelblp6.setText(cardlist.get(5).getcType().toString() + "  " + String.valueOf(cardlist.get(5).getcValue()));
+			lblHeaderP7.setText("Card No. 7");
+			Massegelblp7.setText(cardlist.get(6).getcType().toString() + "  " + String.valueOf(cardlist.get(6).getcValue()));
+			lblHeaderP8.setText("Card No. 8");
+			Massegelblp8.setText(cardlist.get(7).getcType().toString() + "  " + String.valueOf(cardlist.get(7).getcValue()));
+			lblHeaderP9.setText("Card No. 9");
+			Massegelblp9.setText(cardlist.get(8).getcType().toString() + "  " + String.valueOf(cardlist.get(8).getcValue()));
 		}
 	}
 	
@@ -234,10 +405,108 @@ public class MainGameController extends AnchorPane implements Initializable {
 	 */
 	public void updateDealerCards(List<Card> cardlist){
 		int size  = cardlist.size();
-		if(size <= 2)
+		if(size == 2)
 		{
 			MassegelblD1.setText("Hidden");
 			MassegelblD2.setText(cardlist.get(1).getcType().toString() + "  " + String.valueOf(cardlist.get(1).getcValue()));
+		}
+		
+		if(size == 3)
+		{
+			MassegelblD1.setText("Hidden");
+			MassegelblD2.setText(cardlist.get(1).getcType().toString() + "  " + String.valueOf(cardlist.get(1).getcValue()));
+			lblHeaderD3.setText("Card No. 3");
+			MassegelblD3.setText(cardlist.get(2).getcType().toString() + "  " + String.valueOf(cardlist.get(2).getcValue()));
+		}
+		
+		if(size == 4)
+		{
+			MassegelblD1.setText("Hidden");
+			MassegelblD2.setText(cardlist.get(1).getcType().toString() + "  " + String.valueOf(cardlist.get(1).getcValue()));
+			lblHeaderD3.setText("Card No. 3");
+			MassegelblD3.setText(cardlist.get(2).getcType().toString() + "  " + String.valueOf(cardlist.get(2).getcValue()));
+			lblHeaderD4.setText("Card No. 4");
+			MassegelblD4.setText(cardlist.get(3).getcType().toString() + "  " + String.valueOf(cardlist.get(3).getcValue()));
+		}
+		
+		if(size == 5)
+		{
+			MassegelblD1.setText("Hidden");
+			MassegelblD2.setText(cardlist.get(1).getcType().toString() + "  " + String.valueOf(cardlist.get(1).getcValue()));
+			lblHeaderD3.setText("Card No. 3");
+			MassegelblD3.setText(cardlist.get(2).getcType().toString() + "  " + String.valueOf(cardlist.get(1).getcValue()));
+			lblHeaderD4.setText("Card No. 4");
+			MassegelblD4.setText(cardlist.get(3).getcType().toString() + "  " + String.valueOf(cardlist.get(3).getcValue()));
+			lblHeaderD5.setText("Card No. 5");
+			MassegelblD5.setText(cardlist.get(4).getcType().toString() + "  " + String.valueOf(cardlist.get(4).getcValue()));
+		}
+		
+		if(size == 6)
+		{
+			MassegelblD1.setText("Hidden");
+			MassegelblD2.setText(cardlist.get(1).getcType().toString() + "  " + String.valueOf(cardlist.get(1).getcValue()));
+			lblHeaderD3.setText("Card No. 3");
+			MassegelblD3.setText(cardlist.get(2).getcType().toString() + "  " + String.valueOf(cardlist.get(1).getcValue()));
+			lblHeaderD4.setText("Card No. 4");
+			MassegelblD4.setText(cardlist.get(3).getcType().toString() + "  " + String.valueOf(cardlist.get(3).getcValue()));
+			lblHeaderD5.setText("Card No. 5");
+			MassegelblD5.setText(cardlist.get(4).getcType().toString() + "  " + String.valueOf(cardlist.get(4).getcValue()));
+			lblHeaderD6.setText("Card No. 6");
+			MassegelblD6.setText(cardlist.get(5).getcType().toString() + "  " + String.valueOf(cardlist.get(5).getcValue()));
+		}
+		
+		if(size == 7)
+		{
+			MassegelblD1.setText("Hidden");
+			MassegelblD2.setText(cardlist.get(1).getcType().toString() + "  " + String.valueOf(cardlist.get(1).getcValue()));
+			lblHeaderD3.setText("Card No. 3");
+			MassegelblD3.setText(cardlist.get(2).getcType().toString() + "  " + String.valueOf(cardlist.get(1).getcValue()));
+			lblHeaderD4.setText("Card No. 4");
+			MassegelblD4.setText(cardlist.get(3).getcType().toString() + "  " + String.valueOf(cardlist.get(3).getcValue()));
+			lblHeaderD5.setText("Card No. 5");
+			MassegelblD5.setText(cardlist.get(4).getcType().toString() + "  " + String.valueOf(cardlist.get(4).getcValue()));
+			lblHeaderD6.setText("Card No. 6");
+			MassegelblD6.setText(cardlist.get(5).getcType().toString() + "  " + String.valueOf(cardlist.get(5).getcValue()));
+			lblHeaderD7.setText("Card No. 7");
+			MassegelblD7.setText(cardlist.get(6).getcType().toString() + "  " + String.valueOf(cardlist.get(6).getcValue()));
+		}
+		
+		if(size == 8)
+		{
+			MassegelblD1.setText("Hidden");
+			MassegelblD2.setText(cardlist.get(1).getcType().toString() + "  " + String.valueOf(cardlist.get(1).getcValue()));
+			lblHeaderD3.setText("Card No. 3");
+			MassegelblD3.setText(cardlist.get(2).getcType().toString() + "  " + String.valueOf(cardlist.get(1).getcValue()));
+			lblHeaderD4.setText("Card No. 4");
+			MassegelblD4.setText(cardlist.get(3).getcType().toString() + "  " + String.valueOf(cardlist.get(3).getcValue()));
+			lblHeaderD5.setText("Card No. 5");
+			MassegelblD5.setText(cardlist.get(4).getcType().toString() + "  " + String.valueOf(cardlist.get(4).getcValue()));
+			lblHeaderD6.setText("Card No. 6");
+			MassegelblD6.setText(cardlist.get(5).getcType().toString() + "  " + String.valueOf(cardlist.get(5).getcValue()));
+			lblHeaderD7.setText("Card No. 7");
+			MassegelblD7.setText(cardlist.get(6).getcType().toString() + "  " + String.valueOf(cardlist.get(6).getcValue()));
+			lblHeaderD8.setText("Card No. 8");
+			MassegelblD8.setText(cardlist.get(7).getcType().toString() + "  " + String.valueOf(cardlist.get(7).getcValue()));
+		}
+		
+		if(size == 9)
+		{
+			MassegelblD1.setText("Hidden");
+			MassegelblD2.setText(cardlist.get(1).getcType().toString() + "  " + String.valueOf(cardlist.get(1).getcValue()));
+			lblHeaderD3.setText("Card No. 3");
+			MassegelblD3.setText(cardlist.get(2).getcType().toString() + "  " + String.valueOf(cardlist.get(1).getcValue()));
+			lblHeaderD4.setText("Card No. 4");
+			MassegelblD4.setText(cardlist.get(3).getcType().toString() + "  " + String.valueOf(cardlist.get(3).getcValue()));
+			lblHeaderD5.setText("Card No. 5");
+			MassegelblD5.setText(cardlist.get(4).getcType().toString() + "  " + String.valueOf(cardlist.get(4).getcValue()));
+			lblHeaderD6.setText("Card No. 6");
+			MassegelblD6.setText(cardlist.get(5).getcType().toString() + "  " + String.valueOf(cardlist.get(5).getcValue()));
+			lblHeaderD7.setText("Card No. 7");
+			MassegelblD7.setText(cardlist.get(6).getcType().toString() + "  " + String.valueOf(cardlist.get(6).getcValue()));
+			lblHeaderD8.setText("Card No. 8");
+			MassegelblD8.setText(cardlist.get(7).getcType().toString() + "  " + String.valueOf(cardlist.get(7).getcValue()));
+			lblHeaderD9.setText("Card No. 9");
+			MassegelblD9.setText(cardlist.get(8).getcType().toString() + "  " + String.valueOf(cardlist.get(8).getcValue()));
 		}
 	}
 	
