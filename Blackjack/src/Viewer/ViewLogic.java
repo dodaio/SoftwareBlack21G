@@ -70,9 +70,7 @@ public class ViewLogic {
 	 * Exit
 	 */
 	public void executeSysExit() {
-
-		System.exit(0);
-
+		controller.executeSysExit();
 	}
 
 	/**

@@ -20,7 +20,7 @@ public class ControllerLogic {
 	public static ControllerLogic controller;
 
 	private static Stage primarystage;
-	
+
 	// ***************************************** Constructors
 	// ******************************************
 	/**
@@ -35,14 +35,14 @@ public class ControllerLogic {
 		view = new ViewLogic(controller);
 		view.executeLoginView(primarystage);
 	}
-	
+
 	/**
 	 * pass hit button clicked to model
 	 */
 	public void onHitClick() {
 		model.hit();
 	}
-	
+
 	/**
 	 * pass deal button clicked to model
 	 */
@@ -63,64 +63,77 @@ public class ControllerLogic {
 	public void printGameResualt(boolean result, String msg) {
 		view.printGameResult(result, msg);
 	}
-	
+
 	/**
 	 * pass score result to view
 	 */
 	public void updatePlayerScore(int score) {
 		view.updatePlayerScore(score);
 	}
-	
+
 	/**
 	 * pass score result to view
 	 */
 	public void updateDealerScore(int score) {
 		view.updateDealerScore(score);
 	}
-	
+
 	/**
 	 * pass cards to view
 	 */
 	public void updatePlayerCards(List<Model.Card> cards) {
 		view.updatePlayerCards(cards);
 	}
-	
+
 	/**
 	 * pass cards to view
 	 */
 	public void updateDealerCards(List<Model.Card> cards) {
 		view.updateDealerCards(cards);
 	}
-	
+
 	/**
 	 * Sets DEAL button visibility
-	 * @param visible true to set visible, false to disable 
+	 * 
+	 * @param visible
+	 *            true to set visible, false to disable
 	 */
 	public void dealBtnVisability(boolean visible) {
 		view.dealBtnVisability(visible);
 	}
-	
+
 	/**
 	 * Sets HIT button visibility
-	 * @param visible true to set visible, false to disable 
+	 * 
+	 * @param visible
+	 *            true to set visible, false to disable
 	 */
 	public void hitBtnVisability(boolean visible) {
 		view.hitBtnVisability(visible);
 	}
-	
+
 	/**
 	 * Sets hit AND STAND button visibility
-	 * @param visible true to set visible, false to disable 
+	 * 
+	 * @param visible
+	 *            true to set visible, false to disable
 	 */
 	public void hitAndStandBtnVisability(boolean visible) {
 		view.hitAndStandBtnVisability(visible);
 	}
-	
+
 	/*
 	 * Reset game board
 	 */
 	public void resetGameOnUI() {
 		view.resetGameOnUI();
+	}
+
+	/**
+	 * Exit
+	 */
+	public void executeSysExit() {
+		System.exit(0);
 	}
 
 }
