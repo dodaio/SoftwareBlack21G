@@ -160,21 +160,16 @@ public class MainGameController extends AnchorPane implements Initializable {
 
 	@FXML
 	private void onHitClick() {
-		Massegelbl.setText("Hit");
 		controllerInstance.onHitClick();
 	}
 
 	@FXML
 	private void onDealClick() {
-
-		Massegelbl.setText("Deal");
 		controllerInstance.onDealClick();
 	}
 
 	@FXML
 	private void onStandClick() {
-
-		Massegelbl.setText("Stand");
 		controllerInstance.onStandClick();
 	}
 
