@@ -105,4 +105,11 @@ public class ViewLogic {
 	public void hitAndStandBtnVisability(boolean visible) {
 		
 	}
+	
+	/*
+	 * Reset game board
+	 */
+	public void resetGameOnUI() {
+		
+	}
 }

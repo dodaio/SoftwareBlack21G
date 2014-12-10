@@ -115,5 +115,12 @@ public class ControllerLogic {
 	public void hitAndStandBtnVisability(boolean visible) {
 		view.hitAndStandBtnVisability(visible);
 	}
+	
+	/*
+	 * Reset game board
+	 */
+	public void resetGameOnUI() {
+		view.resetGameOnUI();
+	}
 
 }

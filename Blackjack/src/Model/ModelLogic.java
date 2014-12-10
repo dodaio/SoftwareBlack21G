@@ -55,11 +55,8 @@ public class ModelLogic {
 	public void deal() {
 		hands.reset();
 		
-		
-		//************************************************* TODO: MAKE A METHOD IN VIEW TO RESET THE GAMEBOARD, AND CALL IT FROM HERE
 		controller.resetGameOnUI();
-		
-		
+				
 		for (int i = 0; i < 2; i++) { // deals two cards for the player and dealer
 			hands.hitDealer();
 			hands.hitPlayer();
