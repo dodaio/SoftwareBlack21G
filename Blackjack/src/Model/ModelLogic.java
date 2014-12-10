@@ -80,7 +80,6 @@ public class ModelLogic {
 		if (score == 21) 	
 			controller.hitBtnVisability(true); // player cant hit
 			
-		updateDealer();
 		updatePlayer();
 			
 	}
