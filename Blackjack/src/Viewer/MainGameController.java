@@ -39,8 +39,39 @@ public class MainGameController extends AnchorPane implements Initializable {
 	private ControllerLogic controllerInstance;
 
 	/**
-	 * test purpose only!
+	 * Maps ASCII image for every card type
 	 */
+	// Uncomment bellow in the next iteration
+	/*
+	 * private static final Map<CardType, String> ctypeMap; static {
+	 * Map<CardType, String> aMap = new HashMap<CardType, String>();
+	 * aMap.put(CardType.C, "Club"); aMap.put(CardType.D, "Diamond");
+	 * aMap.put(CardType.H, "Heart"); aMap.put(CardType.S, "Spade"); ctypeMap =
+	 * Collections.unmodifiableMap(aMap); }
+	 */
+
+	/**
+	 * Maps Card name string representation for every card
+	 */
+	private static final Map<Integer, String> cardMap;
+	static {
+		Map<Integer, String> aMap = new HashMap<Integer, String>();
+		aMap.put(1, "Ace");
+		aMap.put(2, "2");
+		aMap.put(3, "3");
+		aMap.put(4, "4");
+		aMap.put(5, "5");
+		aMap.put(6, "6");
+		aMap.put(7, "7");
+		aMap.put(8, "8");
+		aMap.put(9, "9");
+		aMap.put(10, "10");
+		aMap.put(11, "Jack");
+		aMap.put(12, "Queen");
+		aMap.put(13, "King");
+
+		cardMap = Collections.unmodifiableMap(aMap);
+	}
 
 	@FXML
 	Label Massegelbl;
@@ -277,51 +308,51 @@ public class MainGameController extends AnchorPane implements Initializable {
 		int size = cardlist.size();
 		if (size >= 2) {
 			Massegelblp1.setText(cardlist.get(0).getcType().toString() + "  "
-					+ String.valueOf(cardlist.get(0).getcValue()));
+					+ cardMap.get(cardlist.get(0).getcValue()));
 			Massegelblp2.setText(cardlist.get(1).getcType().toString() + "  "
-					+ String.valueOf(cardlist.get(1).getcValue()));
+					+ cardMap.get(cardlist.get(1).getcValue()));
 		}
 
 		if (size >= 3) {
 			lblHeaderP3.setText("Card No. 3");
 			Massegelblp3.setText(cardlist.get(2).getcType().toString() + "  "
-					+ String.valueOf(cardlist.get(2).getcValue()));
+					+ cardMap.get(cardlist.get(2).getcValue()));
 		}
 
 		if (size >= 4) {
 			lblHeaderP4.setText("Card No. 4");
 			Massegelblp4.setText(cardlist.get(3).getcType().toString() + "  "
-					+ String.valueOf(cardlist.get(3).getcValue()));
+					+ cardMap.get(cardlist.get(3).getcValue()));
 		}
 
 		if (size >= 5) {
 			lblHeaderP5.setText("Card No. 5");
 			Massegelblp5.setText(cardlist.get(4).getcType().toString() + "  "
-					+ String.valueOf(cardlist.get(4).getcValue()));
+					+ cardMap.get(cardlist.get(4).getcValue()));
 		}
 
 		if (size >= 6) {
 			lblHeaderP6.setText("Card No. 6");
 			Massegelblp6.setText(cardlist.get(5).getcType().toString() + "  "
-					+ String.valueOf(cardlist.get(5).getcValue()));
+					+ cardMap.get(cardlist.get(5).getcValue()));
 		}
 
 		if (size >= 7) {
 			lblHeaderP7.setText("Card No. 7");
 			Massegelblp7.setText(cardlist.get(6).getcType().toString() + "  "
-					+ String.valueOf(cardlist.get(6).getcValue()));
+					+ cardMap.get(cardlist.get(6).getcValue()));
 		}
 
 		if (size >= 8) {
 			lblHeaderP8.setText("Card No. 8");
 			Massegelblp8.setText(cardlist.get(7).getcType().toString() + "  "
-					+ String.valueOf(cardlist.get(7).getcValue()));
+					+ cardMap.get(cardlist.get(7).getcValue()));
 		}
 
 		if (size >= 9) {
 			lblHeaderP9.setText("Card No. 9");
 			Massegelblp9.setText(cardlist.get(8).getcType().toString() + "  "
-					+ String.valueOf(cardlist.get(8).getcValue()));
+					+ cardMap.get(cardlist.get(8).getcValue()));
 		}
 	}
 
@@ -333,50 +364,51 @@ public class MainGameController extends AnchorPane implements Initializable {
 		int size = cardlist.size();
 		if (size >= 2) {
 			MassegelblD1.setText(cardlist.get(0).getcType().toString() + "  "
-					+ String.valueOf(cardlist.get(0).getcValue()));
+					+ cardMap.get(cardlist.get(0).getcValue()));
 			MassegelblD2.setText(cardlist.get(1).getcType().toString() + "  "
-					+ String.valueOf(cardlist.get(1).getcValue()));
+					+ cardMap.get(cardlist.get(1).getcValue()));
 		}
 
 		if (size >= 3) {
+			lblHeaderD3.setText("Card No. 3");
 			MassegelblD3.setText(cardlist.get(2).getcType().toString() + "  "
-					+ String.valueOf(cardlist.get(2).getcValue()));
+					+ cardMap.get(cardlist.get(2).getcValue()));
 		}
 
 		if (size >= 4) {
 			lblHeaderD4.setText("Card No. 4");
 			MassegelblD4.setText(cardlist.get(3).getcType().toString() + "  "
-					+ String.valueOf(cardlist.get(3).getcValue()));
+					+ cardMap.get(cardlist.get(3).getcValue()));
 		}
 
 		if (size >= 5) {
 			lblHeaderD5.setText("Card No. 5");
 			MassegelblD5.setText(cardlist.get(4).getcType().toString() + "  "
-					+ String.valueOf(cardlist.get(4).getcValue()));
+					+ cardMap.get(cardlist.get(4).getcValue()));
 		}
 
 		if (size >= 6) {
 			lblHeaderD6.setText("Card No. 6");
 			MassegelblD6.setText(cardlist.get(5).getcType().toString() + "  "
-					+ String.valueOf(cardlist.get(5).getcValue()));
+					+ cardMap.get(cardlist.get(5).getcValue()));
 		}
 
 		if (size >= 7) {
 			lblHeaderD7.setText("Card No. 7");
 			MassegelblD7.setText(cardlist.get(6).getcType().toString() + "  "
-					+ String.valueOf(cardlist.get(6).getcValue()));
+					+ cardMap.get(cardlist.get(6).getcValue()));
 		}
 
 		if (size >= 8) {
 			lblHeaderD8.setText("Card No. 8");
 			MassegelblD8.setText(cardlist.get(7).getcType().toString() + "  "
-					+ String.valueOf(cardlist.get(7).getcValue()));
+					+ cardMap.get(cardlist.get(7).getcValue()));
 		}
 
 		if (size >= 9) {
 			lblHeaderD9.setText("Card No. 9");
 			MassegelblD9.setText(cardlist.get(8).getcType().toString() + "  "
-					+ String.valueOf(cardlist.get(8).getcValue()));
+					+ cardMap.get(cardlist.get(8).getcValue()));
 		}
 	}
 
