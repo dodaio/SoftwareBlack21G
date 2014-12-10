@@ -33,23 +33,31 @@ public class ViewLogic {
 	// ***************************************** Methods
 	// ***********************************************
 
+	/**
+	 * Execute game view
+	 * 
+	 * @param stg
+	 *            pointer to game view
+	 */
 	public void executeLoginView(Stage stg) {
 		mstage = stg;
 
 		try {
-			FXMLLoader loader= new FXMLLoader();
+			FXMLLoader loader = new FXMLLoader();
 			loader.setLocation(getClass().getResource("MainGame.fxml"));
-			Parent root = (AnchorPane)loader.load();
-			//Parent root = FXMLLoader.load(getClass().getResource("MainGame.fxml"));
+			Parent root = (AnchorPane) loader.load();
+			// Parent root =
+			// FXMLLoader.load(getClass().getResource("MainGame.fxml"));
 			Scene scene = new Scene(root);
 			Stage primaryStage = mstage;
-			scene.getStylesheets().add(getClass().getResource("MainGame.css").toExternalForm());
+			scene.getStylesheets().add(
+					getClass().getResource("MainGame.css").toExternalForm());
 			primaryStage.setScene(scene);
 			primaryStage.setResizable(false);
 			primaryStage.sizeToScene();
-			
+
 			mgame = loader.getController();
-			
+
 			primaryStage.show();
 		} catch (IOException e) {
 
@@ -58,106 +66,118 @@ public class ViewLogic {
 
 	}
 
+	/**
+	 * Exit
+	 */
 	public void executeSysExit() {
 
 		System.exit(0);
 
 	}
 
-	
 	/**
+	 * Show game result
 	 * 
 	 * @param result
 	 * @param msg
 	 */
-	public void printGameResult(boolean result, String msg){
+	public void printGameResult(boolean result, String msg) {
 		mgame.printGameResult(result, msg);
 	}
-	
+
 	/**
+	 * Update players score
 	 * 
 	 * @param score
 	 */
 	public void updatePlayerScore(int score) {
 		mgame.updatePlayerScore(score);
 	}
-	
+
 	/**
+	 * Update dealer's score
 	 * 
 	 * @param score
 	 */
 	public void updateDealerScore(int score) {
 		mgame.updateDealerScore(score);
 	}
-	
+
 	/**
+	 * Update Player's cards
 	 * 
 	 * @param cards
 	 */
 	public void updatePlayerCards(List<Model.Card> cards) {
 		mgame.updatePlayerCards(cards);
 	}
-	
+
 	/**
+	 * Update dealer's cards
 	 * 
 	 * @param cards
 	 */
 	public void updateDealerCards(List<Model.Card> cards) {
 		mgame.updateDealerCards(cards);
 	}
-	
+
 	/**
 	 * Sets DEAL button visibility
-	 * @param visible true to set visible, false to disable 
+	 * 
+	 * @param visible
+	 *            true to set visible, false to disable
 	 */
 	public void dealBtnVisability(boolean visible) {
-		
-		if(visible)                      //show button
+
+		if (visible) // show button
 			mgame.showButtonDeal();
-		
-		if(!visible)                      //show button
+
+		if (!visible) // show button
 			mgame.hideButtonDeal();
-		
-		
+
 	}
-	
+
 	/**
 	 * Sets HIT button visibility
-	 * @param visible true to set visible, false to disable 
+	 * 
+	 * @param visible
+	 *            true to set visible, false to disable
 	 */
 	public void hitBtnVisability(boolean visible) {
-		
-		if(visible) 				//display button
+
+		if (visible) // display button
 		{
 			mgame.showButtonHit();
 		}
-		
-		if(!visible) 				//hide button
+
+		if (!visible) // hide button
 		{
 			mgame.hideButtonHit();
 		}
 	}
-	
+
 	/**
 	 * Sets HIT AND STAND button visibility
-	 * @param visible true to set visible, false to disable 
+	 * 
+	 * @param visible
+	 *            true to set visible, false to disable
 	 */
 	public void hitAndStandBtnVisability(boolean visible) {
-			
-		if(visible) 				//display button
+
+		if (visible) // display button
 		{
 			mgame.showButtonHit();
 			mgame.showButtonStand();
 		}
-		
-		else 				//hide button
+
+		else // hide button
 		{
 			mgame.hideButtonHit();
 			mgame.hideButtonStand();
 		}
-		
+
 	}
-		
+
 	/**
 	 * Reset game board
 	 */

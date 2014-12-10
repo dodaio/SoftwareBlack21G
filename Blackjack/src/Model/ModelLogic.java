@@ -10,20 +10,19 @@ public class ModelLogic {
 	// *********************************************
 	/** The instance of the cpntroller */
 	private static ControllerLogic controller;
-	/** Dealer and player hands  */
+	/** Dealer and player hands */
 	private static Hands hands;
 	/** Soft hand */
 	private static int dealer_limit = 17;
-	/** Result string for View layer  */
+	/** Result string for View layer */
 	private static String win_msg = "You Won";
-	/** Result string for View layer  */
+	/** Result string for View layer */
 	private static String lose_msg = "You Lost";
 
 	/*************************
 	 * For use in next iteration of scrum private static
 	 * 
-	 * int sessionScore = 0;
-	 * private static int roundNum = 0;
+	 * int sessionScore = 0; private static int roundNum = 0;
 	 */
 
 	// ***************************************** Constructors
@@ -38,69 +37,76 @@ public class ModelLogic {
 
 	// ***************************************** Methods
 	// ******************************************
-	
+
 	/**
 	 * This method for round end.
 	 */
-	protected void endRound(){
+	protected void endRound() {
 		boolean result = calculteGameResualt(); // calculate who won.
 		announceResualt(result); // pass it to controller and view logic
-		controller.hitAndStandBtnVisability(false); // turn both hit and stand button off
-		controller.dealBtnVisability(true); 		// and deal button on.
+		controller.hitAndStandBtnVisability(false); // turn both hit and stand
+													// button off
+		controller.dealBtnVisability(true); // and deal button on.
 		updateDealer();
 		updatePlayer();
 	}
 
 	/**
-	 * Start the round. This method shuffles the deck and initialize the new Hands.
+	 * Start the round. This method shuffles the deck and initialize the new
+	 * Hands.
 	 */
 	public void deal() {
 		hands.reset();
-		
+
 		controller.resetGameOnUI();
-				
-		for (int i = 0; i < 2; i++) { // deals two cards for the player and dealer
+
+		for (int i = 0; i < 2; i++) { // deals two cards for the player and
+										// dealer
 			hands.hitDealer();
 			hands.hitPlayer();
 		}
-		controller.hitAndStandBtnVisability(true); // turn both hit and stand button on
-		controller.dealBtnVisability(false); 		// and deal button off.
+		controller.hitAndStandBtnVisability(true); // turn both hit and stand
+													// button on
+		controller.dealBtnVisability(false); // and deal button off.
 		updateDealerCards(hands.getDealerCards());
 		updatePlayer();
 	}
 
 	/**
-	 * Deals another card to player and modifies 
-	 * the visibility of hit button in needed.
+	 * Deals another card to player and modifies the visibility of hit button in
+	 * needed.
 	 */
 	public void hit() {
 		hands.hitPlayer();
 		int score = hands.getPlayerScore();
 		updatePlayer(); // update the score for the UI
-		if (score > 21)  // player bust
-			endRound(); // end round and declare result to player. result calculated in endRound();
-		if (score == 21) 	
+		if (score > 21) // player bust
+			endRound(); // end round and declare result to player. result
+						// calculated in endRound();
+		if (score == 21)
 			controller.hitBtnVisability(true); // player cant hit
-			
+
 		updatePlayer();
-			
+
 	}
 
 	/**
 	 * After clicking stand in the UI, this method start dealing card to the
-	 * dealer according to the game rules and than calculating and presenting result.
+	 * dealer according to the game rules and than calculating and presenting
+	 * result.
 	 */
 	public void stand() {
-		while (hands.getDealerScore() <= dealer_limit) { // as long dealer has not passed 17.
+		while (hands.getDealerScore() <= dealer_limit) { // as long dealer has
+															// not passed 17.
 			hands.hitDealer();
 			updateDealer(); // update the score for the UI
 		}
 		endRound(); // end round and declare result to player
 	}
-	
 
 	/**
 	 * returns game result
+	 * 
 	 * @return true if player wins, otherwise false
 	 */
 	protected boolean calculteGameResualt() {
@@ -118,6 +124,7 @@ public class ModelLogic {
 
 	/**
 	 * Announces result to controller
+	 * 
 	 * @returns result true if win, false if lose
 	 */
 	private void announceResualt(boolean result) {
@@ -131,7 +138,7 @@ public class ModelLogic {
 		updatePlayerScore(hands.getPlayerScore());
 		updatePlayerCards(hands.getPlayerCards());
 	}
-	
+
 	/**
 	 * update dealer score and cards for view
 	 */
@@ -146,29 +153,28 @@ public class ModelLogic {
 	private void updatePlayerScore(int score) {
 		controller.updatePlayerScore(score);
 	}
-	
+
 	/**
 	 * update dealer score for view
 	 */
 	private void updateDealerScore(int score) {
 		controller.updateDealerScore(score);
 	}
-	
+
 	/**
 	 * update player cards for view
 	 */
 	private void updatePlayerCards(List<Model.Card> cards) {
 		controller.updatePlayerCards(cards);
 	}
-	
+
 	/**
 	 * update player score and cards for view
 	 */
 	private void updateDealerCards(List<Model.Card> cards) {
 		controller.updateDealerCards(cards);
 	}
-	
-	
+
 	/*************************
 	 * For use in next iteration of scrum /** new session: rest the session
 	 * score and round number.
