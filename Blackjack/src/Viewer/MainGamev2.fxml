@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.paint.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.effect.*?>
+<?import javafx.scene.text.*?>
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import java.lang.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.layout.AnchorPane?>
+
+<AnchorPane prefHeight="530.0" prefWidth="874.0" styleClass="background" stylesheets="@MainGamev2.css" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Viewer.MainGamev2Controller">
+   <children>
+      <MenuBar opacity="0.66" prefHeight="27.0" prefWidth="874.0">
+        <menus>
+          <Menu mnemonicParsing="false" text="File">
+            <items>
+              <MenuItem mnemonicParsing="false" onAction="#Exit" text="Close" />
+            </items>
+          </Menu>
+          <Menu mnemonicParsing="false" text="Help">
+            <items>
+              <MenuItem mnemonicParsing="false" onAction="#showAboutWindow" text="About" />
+            </items>
+          </Menu>
+        </menus>
+      </MenuBar>
+      <HBox alignment="CENTER" layoutX="249.0" layoutY="440.0" prefHeight="53.0" prefWidth="376.0" spacing="30.0">
+         <children>
+            <Button fx:id="BtnHit" alignment="CENTER" contentDisplay="CENTER" graphicTextGap="8.0" mnemonicParsing="false" onAction="#onHitClick" pickOnBounds="false" prefHeight="37.0" prefWidth="61.0" text="Hit" textAlignment="CENTER">
+               <cursor>
+                  <Cursor fx:constant="OPEN_HAND" />
+               </cursor></Button>
+            <Button fx:id="BtnDeal" alignment="CENTER" contentDisplay="CENTER" graphicTextGap="8.0" mnemonicParsing="false" onAction="#onDealClick" prefHeight="37.0" prefWidth="61.0" text="Deal" textAlignment="CENTER">
+               <cursor>
+                  <Cursor fx:constant="OPEN_HAND" />
+               </cursor></Button>
+            <Button fx:id="BtnStand" alignment="CENTER" contentDisplay="CENTER" graphicTextGap="8.0" mnemonicParsing="false" onAction="#onStandClick" prefHeight="37.0" prefWidth="61.0" text="Stand" textAlignment="CENTER">
+               <cursor>
+                  <Cursor fx:constant="OPEN_HAND" />
+               </cursor></Button>
+         </children>
+         <opaqueInsets>
+            <Insets />
+         </opaqueInsets>
+      </HBox>
+      <Label layoutX="35.0" layoutY="103.0" prefHeight="21.0" prefWidth="97.0" text="Dealer Score: " textFill="#81c256">
+         <font>
+            <Font name="System Bold" size="15.0" />
+         </font>
+      </Label>
+      <Label layoutX="36.0" layoutY="143.0" text="Player Score: " textFill="#81c256">
+         <font>
+            <Font name="System Bold" size="15.0" />
+         </font>
+      </Label>
+      <Label fx:id="DScore" layoutX="139.0" layoutY="105.0" prefHeight="17.0" prefWidth="48.0" textFill="#81c256">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </Label>
+      <Label fx:id="PScore" layoutX="139.0" layoutY="143.0" prefHeight="17.0" prefWidth="48.0" textFill="#81c256">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </Label>
+      <Label layoutX="739.0" layoutY="56.0" text="Result" textFill="#81c256">
+         <font>
+            <Font name="System Bold" size="18.0" />
+         </font>
+      </Label>
+      <Label fx:id="lblMsg" contentDisplay="CENTER" layoutX="739.0" layoutY="80.0" prefHeight="27.0" prefWidth="121.0" textAlignment="CENTER" textFill="#81c256" textOverrun="CENTER_ELLIPSIS">
+         <font>
+            <Font name="System Bold Italic" size="18.0" />
+         </font></Label>
+      <ImageView fx:id="FirstCardPlayer" fitHeight="121.0" fitWidth="85.0" layoutX="353.0" layoutY="265.0" pickOnBounds="true" preserveRatio="true" />
+      <ImageView fx:id="SecoundCardPlayer" fitHeight="121.0" fitWidth="85.0" layoutX="378.0" layoutY="265.0" pickOnBounds="true" preserveRatio="true" />
+      <ImageView fx:id="ThirdCardPlayer" fitHeight="121.0" fitWidth="85.0" layoutX="403.0" layoutY="265.0" pickOnBounds="true" preserveRatio="true" />
+      <ImageView fx:id="FourthCardPlayer" fitHeight="121.0" fitWidth="85.0" layoutX="428.0" layoutY="265.0" pickOnBounds="true" preserveRatio="true" />
+      <ImageView fx:id="FifthCardPlayer" fitHeight="121.0" fitWidth="85.0" layoutX="453.0" layoutY="265.0" pickOnBounds="true" preserveRatio="true" />
+      <ImageView fx:id="SixthCardPlayer" fitHeight="121.0" fitWidth="85.0" layoutX="478.0" layoutY="265.0" pickOnBounds="true" preserveRatio="true" />
+      <ImageView fx:id="SeventhCardPlayer" fitHeight="121.0" fitWidth="85.0" layoutX="503.0" layoutY="265.0" pickOnBounds="true" preserveRatio="true" />
+      <ImageView fx:id="EightCardPlayer" fitHeight="121.0" fitWidth="85.0" layoutX="528.0" layoutY="265.0" pickOnBounds="true" preserveRatio="true" />
+      <ImageView fx:id="NineghtCardPlayer" fitHeight="121.0" fitWidth="85.0" layoutX="553.0" layoutY="265.0" pickOnBounds="true" preserveRatio="true" />
+      <ImageView fx:id="FirstHideCardDealer" fitHeight="128.0" fitWidth="85.0" layoutX="353.0" layoutY="93.0" pickOnBounds="true" preserveRatio="true" />
+      <ImageView fx:id="FirstCardDealer" fitHeight="121.0" fitWidth="85.0" layoutX="353.0" layoutY="93.0" pickOnBounds="true" preserveRatio="true" />
+      <ImageView fx:id="SecoundCardDealer" fitHeight="121.0" fitWidth="85.0" layoutX="378.0" layoutY="93.0" pickOnBounds="true" preserveRatio="true" />
+      <ImageView fx:id="ThirdCardDealer" fitHeight="121.0" fitWidth="85.0" layoutX="403.0" layoutY="93.0" pickOnBounds="true" preserveRatio="true" />
+      <ImageView fx:id="FourthCardDealer" fitHeight="121.0" fitWidth="85.0" layoutX="428.0" layoutY="93.0" pickOnBounds="true" preserveRatio="true" />
+      <ImageView fx:id="FifthCardDealer" fitHeight="121.0" fitWidth="85.0" layoutX="453.0" layoutY="93.0" pickOnBounds="true" preserveRatio="true" />
+      <ImageView fx:id="SixthCardDealer" fitHeight="121.0" fitWidth="85.0" layoutX="478.0" layoutY="93.0" pickOnBounds="true" preserveRatio="true" />
+      <ImageView fx:id="SeventhCardDealer" fitHeight="121.0" fitWidth="85.0" layoutX="493.0" layoutY="93.0" pickOnBounds="true" preserveRatio="true" />
+      <ImageView fx:id="EightCardDealer" fitHeight="121.0" fitWidth="85.0" layoutX="518.0" layoutY="93.0" pickOnBounds="true" preserveRatio="true" />
+      <ImageView fx:id="NineghtCardDealer" fitHeight="121.0" fitWidth="85.0" layoutX="543.0" layoutY="93.0" pickOnBounds="true" preserveRatio="true" />
+      <Label fx:id="PScore2" layoutX="322.0" layoutY="299.0" prefHeight="27.0" prefWidth="31.0" textFill="#81c256">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </Label>
+   </children>
+</AnchorPane>

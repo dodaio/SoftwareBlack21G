@@ -7,22 +7,21 @@ import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.layout.AnchorPane;
+import javafx.scene.image.Image;
 import javafx.stage.Stage;
 import Controller.ControllerLogic;
 
 public class ViewLogic {
 
-	// ***************************************** Variables
-	// *********************************************
+	// ***************************************** Variables *********************************************
 	/** ControllerLogic reference pointer */
 	protected static ControllerLogic controller;
 	/** stage */
 	protected static Stage mstage;
 	/** stage */
-	protected static MainGameController mgame;
+	protected static MainGamev2Controller mgame;
 
-	// ***************************************** Constructors
-	// ******************************************
+	// ***************************************** Constructors ******************************************
 	/**
 	 * Full C'tor.
 	 */
@@ -44,18 +43,15 @@ public class ViewLogic {
 
 		try {
 			FXMLLoader loader = new FXMLLoader();
-			loader.setLocation(getClass().getResource("MainGame.fxml"));
+			loader.setLocation(getClass().getResource("MainGamev2.fxml"));
 			Parent root = (AnchorPane) loader.load();
-			// Parent root =
-			// FXMLLoader.load(getClass().getResource("MainGame.fxml"));
 			Scene scene = new Scene(root);
 			Stage primaryStage = mstage;
-			scene.getStylesheets().add(
-					getClass().getResource("MainGame.css").toExternalForm());
+			scene.getStylesheets().add(getClass().getResource("MainGamev2.css").toExternalForm());
 			primaryStage.setScene(scene);
 			primaryStage.setResizable(false);
 			primaryStage.sizeToScene();
-
+			primaryStage.getIcons().add(new Image("/GameImages/icon3.png"));
 			mgame = loader.getController();
 
 			primaryStage.show();

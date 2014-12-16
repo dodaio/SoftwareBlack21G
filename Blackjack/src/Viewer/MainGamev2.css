@@ -1,0 +1,11 @@
+@CHARSET "windows-1255";
+
+.background {
+    -fx-background-image: url("blackjacktable.png");
+    -fx-background-repeat: repeat;
+    -fx-background-size:875 525;
+	-fx-background-color:
+        linear-gradient(#38424b 0%, #1f2429 20%, #191d22 100%),
+        linear-gradient(#20262b, #191d22),
+        radial-gradient(center 25% 0%, radius 50%, rgba(120, 40, 80,0.9), rgba(30, 60, 90,0));
+}
