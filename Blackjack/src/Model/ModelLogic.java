@@ -6,8 +6,7 @@ import Controller.ControllerLogic;
 
 public class ModelLogic {
 
-	// ***************************************** Variables
-	// *********************************************
+	// ***************************************** Variables *********************************************
 	/** The instance of the controller */
 	private static ControllerLogic controller;
 	/** Dealer and player hands */
@@ -83,8 +82,8 @@ public class ModelLogic {
 			endRound(); // end round and declare result to player. result
 						// calculated in endRound();
 		if (score == 21)
-			controller.hitBtnVisability(false); // player cant hit
-
+			endRound();	 // player cant hit & stand, new game will be asked to start 
+		
 		updatePlayer();
 
 	}
