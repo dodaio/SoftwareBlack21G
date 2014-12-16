@@ -7,14 +7,17 @@ public class Card {
 	private CardType cType;
 	/** The Card value*/
 	private int cValue;
+	/**Link to the photo of the card**/
+	private String link;
 
 	//***************************************** Constructors ******************************************
 	/**
 	 * Full C'tor. 
 	 */
-		public Card (CardType type,int value){
-			this.setcType(type);
-			this.setcValue(value);
+		public Card (CardType type,int value, String link){
+			setcType(type);
+			setcValue(value);
+			setLink(link);
 		}
 	
 	/**
@@ -43,6 +46,20 @@ public class Card {
 	 */
 	public void setcValue(int cValue) {
 		this.cValue = cValue;
+	}
+	
+	/**
+	 * @return the link
+	 */
+	public String getLink() {
+		return link;
+	}
+
+	/**
+	 * @param link2 the link to set
+	 */
+	public void setLink(String link2) {
+		this.link = link2;
 	}
 	
 	/*

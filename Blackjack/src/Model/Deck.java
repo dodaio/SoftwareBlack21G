@@ -1,77 +1,83 @@
 package Model;
 
-import java.util.Random;
 import Model.Card;
+import java.util.ArrayList;
+import java.util.Collections;
+import java.util.List;
 
 public class Deck {
 
-	// ***************************************** Variables
-	/** The deck itself */
-	private Card[] CardsDeck;
+	// ***************************************** Variables  *****************************************
 	/** index to point on the next Card to "pull". start from 0.*/
 	static private int deckIndex = 0;
-	// ***************************************** Constructors
+	/** arraylist of carrds **/
+	ArrayList<Card> DeckofCards;
+	// ***************************************** Constructors  *****************************************
 	/**
 	 * Full C'tor.
 	 */
 	protected Deck() {
-		CardsDeck = new Card[52];
+		DeckofCards  = new ArrayList<Card>();
 		newDeck();
 	}
 	
 	protected void newDeck() {
-		this.CardsDeck = initDeck(); // init deck
-		this.shuffleArray(); // shuffle deck
+		initDeck();		// init deck 
+		shuffleArray(); // shuffle deck
 	}
 
 	/**
-	 * @return the CardsDeck
+	 * @return the DeckofCards
 	 */
-	protected Card[] getCardsDeck() {
-		return CardsDeck;
+	protected List<Card> getCardsDeck() {
+		return DeckofCards;
 	}
 
 	/**
-	 * @param CardsDeck
-	 *            the CardsDeck to set
+	 * @param DeckofCard
+	 * the DeckofCard to set
 	 */
-	protected void setCardsDeck(Card[] CardsDeck) {
-		this.CardsDeck = CardsDeck;
+	protected void setCardsDeck(ArrayList<Card> CardsDeck) {
+		this.DeckofCards = CardsDeck;
 	}
 	
 	/**
 	 * Create a sorted array of 52 cards.
-	 * @return
 	 */
-	private Card[] initDeck() {
-		Card c;
-		int k = 0;
-		Card[] tempDeck = new Card[52];
-		if (getCardsDeck() != null)
-			for (int j = 0; j < 4; j++)
-				for (int i = 1; i < 14; i++) {
-					c = new Card(CardType.values()[j], i); // create new Card ,
-															// j is the Card type
-															// ,i is the value
-					tempDeck[k++] = c; // inserting the Cards to our temp sorted
-										// deck;
+	private void initDeck() {
+		if(DeckofCards !=null){
+			for (int j = 0; j < 4; j++){		// load for each card type
+				for (int i = 1; i < 14; i++) {		//load for each card type, it's value.
+					switch (j) {
+					case 0:
+						DeckofCards.add(new Card(CardType.values()[j], i,new String("/GameImages/Club-"+ i + ".png")));
+						break;
+					case 1:
+						DeckofCards.add(new Card(CardType.values()[j], i,new String("/GameImages/Diamond-"+ i + ".png")));
+						break;
+					case 2:
+						DeckofCards.add(new Card(CardType.values()[j], i,new String("/GameImages/Heart-"+ i + ".png")));
+						break;
+					case 3:
+						DeckofCards.add(new Card(CardType.values()[j], i,new String("/GameImages/Spade-"+ i + ".png")));
+						break;
+					default:
+						break;
+					}
+				
 				}
-		return tempDeck;
+				
+			}
+			
+		}
+			
 	}
 
 	/**
 	 * method to shuffle the array of cards (the deck).
 	 */
 	protected void shuffleArray() {
-		Random rnd = new Random();
-		for (int i = getCardsDeck().length - 1; i > 0; i--) {
-			int index = rnd.nextInt(i + 1);
-			// Simple swap
-			Card c = getCardsDeck()[index];
-			getCardsDeck()[index] = getCardsDeck()[i];
-			getCardsDeck()[i] = c;
-		}
-		deckIndex = 0;
+		Collections.shuffle(DeckofCards);
 	}
 	
 	/**
@@ -79,7 +85,7 @@ public class Deck {
 	 */
 	protected Card getCard(){
 		if(getCardsDeck() != null)
-			return getCardsDeck()[deckIndex++]; // deckIndex is re-initilized at shuffleArray()
+			return getCardsDeck().get(deckIndex++); // deckIndex is re-initilized at shuffleArray()
 		return null; // if deck doesn't exists.
 	}
 

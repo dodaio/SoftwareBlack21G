@@ -8,7 +8,7 @@ public class ModelLogic {
 
 	// ***************************************** Variables
 	// *********************************************
-	/** The instance of the cpntroller */
+	/** The instance of the controller */
 	private static ControllerLogic controller;
 	/** Dealer and player hands */
 	private static Hands hands;
@@ -25,8 +25,7 @@ public class ModelLogic {
 	 * int sessionScore = 0; private static int roundNum = 0;
 	 */
 
-	// ***************************************** Constructors
-	// ******************************************
+	// ***************************************** Constructors ******************************************
 	/**
 	 * Full C'tor.
 	 */
@@ -35,8 +34,7 @@ public class ModelLogic {
 		hands = new Hands();
 	}
 
-	// ***************************************** Methods
-	// ******************************************
+	// ***************************************** Methods ******************************************
 
 	/**
 	 * This method for round end.
@@ -85,7 +83,7 @@ public class ModelLogic {
 			endRound(); // end round and declare result to player. result
 						// calculated in endRound();
 		if (score == 21)
-			controller.hitBtnVisability(true); // player cant hit
+			controller.hitBtnVisability(false); // player cant hit
 
 		updatePlayer();
 
@@ -114,11 +112,12 @@ public class ModelLogic {
 		int dealerScore = hands.getDealerScore();
 		int playerScore = hands.getPlayerScore();
 
-		if (dealerScore == 21
-				|| playerScore > 21
-				|| (playerScore < 21 && dealerScore < 21 && dealerScore > playerScore)) {
+		if (dealerScore == 21 || playerScore > 21 || (playerScore < 21 && dealerScore < 21 && dealerScore > playerScore)) 
+		{
 			return false; // lose
-		} else {
+		} 
+		else
+		{
 			return true; // win
 		}
 	}
