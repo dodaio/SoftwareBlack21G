@@ -9,7 +9,7 @@ public class Deck {
 
 	// ***************************************** Variables  *****************************************
 	/** index to point on the next Card to "pull". start from 0.*/
-	static private int deckIndex = 0;
+	static protected int deckIndex = 0;
 	/** arraylist of carrds **/
 	ArrayList<Card> DeckofCards;
 	// ***************************************** Constructors  *****************************************
@@ -78,15 +78,17 @@ public class Deck {
 	 */
 	protected void shuffleArray() {
 		Collections.shuffle(DeckofCards);
+		deckIndex = 0;
 	}
 	
 	/**
 	 * get a Card to deal
 	 */
 	protected Card getCard(){
-		
+		if(deckIndex<0)
+			deckIndex = 0; // in case index get distorted some how, reset it.
 		if(getCardsDeck() != null){
-			if(!(deckIndex<52))
+			if(deckIndex>=52)
 			{
 				shuffleArray();  //if we are out of cards to deal, shuffle again and deal.
 				deckIndex = 0;

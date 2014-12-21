@@ -90,7 +90,7 @@ public class Hands {
 				score += 10;
 			else {
 				if (cValue == 1) // if ace
-					if (score > 10) // hand won't burst with ace as 11
+					if (score <= 10) // hand won't burst with ace as 11
 						score += 11;
 					else
 						// hand will burst with ace as 11

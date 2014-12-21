@@ -39,7 +39,9 @@ public class ModelLogic {
 	 * This method for round end.
 	 */
 	protected void endRound() {
-		boolean result = calculteGameResualt(); // calculate who won.
+		int dealerScore = hands.getDealerScore();
+		int playerScore = hands.getPlayerScore();
+		boolean result = calculteGameResualt(dealerScore, playerScore); // calculate who won.
 		announceResualt(result); // pass it to controller and view logic
 		controller.hitAndStandBtnVisability(false); // turn both hit and stand
 													// button off
@@ -68,6 +70,8 @@ public class ModelLogic {
 		controller.dealBtnVisability(false); // and deal button off.
 		updateDealerCards(hands.getDealerCards());
 		updatePlayer();
+		if (hands.getPlayerScore() == 21)
+			endRound();	 // player is at 21 and forced to stand, dealer play
 	}
 
 	/**
@@ -82,8 +86,7 @@ public class ModelLogic {
 			endRound(); // end round and declare result to player. result
 						// calculated in endRound();
 		if (score == 21)
-			endRound();	 // player cant hit & stand, new game will be asked to start 
-		
+			endRound();	 // player is at 21 and forced to stand, dealer play
 		updatePlayer();
 
 	}
@@ -107,11 +110,10 @@ public class ModelLogic {
 	 * 
 	 * @return true if player wins, otherwise false
 	 */
-	protected boolean calculteGameResualt() {
-		int dealerScore = hands.getDealerScore();
-		int playerScore = hands.getPlayerScore();
+	protected boolean calculteGameResualt(int dealerScore , int playerScore ) {
 
-		if (dealerScore == 21 || playerScore > 21 || (playerScore < 21 && dealerScore < 21 && dealerScore > playerScore)) 
+		if (dealerScore == 21 || playerScore > 21 || dealerScore == playerScore ||
+				(playerScore < 21 && dealerScore < 21 && dealerScore > playerScore)) 
 		{
 			return false; // lose
 		} 
