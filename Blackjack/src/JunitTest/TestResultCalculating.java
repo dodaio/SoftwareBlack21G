@@ -1,10 +1,12 @@
-package Model;
+package JunitTest;
 
 import static org.junit.Assert.*;
+
 import org.junit.BeforeClass;
 import org.junit.Test;
 
 import Controller.ControllerLogic;
+import Model.ModelLogic;
 
 /*
  * This test class is designed to the ModelLogic class.

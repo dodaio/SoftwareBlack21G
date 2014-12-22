@@ -1,4 +1,4 @@
-package Model;
+package JunitTest;
 
 import static org.junit.Assert.*;
 
@@ -7,6 +7,9 @@ import org.junit.AfterClass;
 import org.junit.Before;
 import org.junit.BeforeClass;
 import org.junit.Test;
+
+import Model.Card;
+import Model.CardType;
 /*
  * This test class is designed to the Card class.
  * test equals for card: various combinations of values and types.

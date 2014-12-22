@@ -9,14 +9,14 @@ public class Deck {
 
 	// ***************************************** Variables  *****************************************
 	/** index to point on the next Card to "pull". start from 0.*/
-	static protected int deckIndex = 0;
+	public static int deckIndex = 0;
 	/** arraylist of carrds **/
 	ArrayList<Card> DeckofCards;
 	// ***************************************** Constructors  *****************************************
 	/**
 	 * Full C'tor.
 	 */
-	protected Deck() {
+	public Deck() {
 		DeckofCards  = new ArrayList<Card>();
 		newDeck();
 	}
@@ -84,7 +84,7 @@ public class Deck {
 	/**
 	 * get a Card to deal
 	 */
-	protected Card getCard(){
+	public Card getCard(){
 		if(deckIndex<0)
 			deckIndex = 0; // in case index get distorted some how, reset it.
 		if(getCardsDeck() != null){

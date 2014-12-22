@@ -110,7 +110,7 @@ public class ModelLogic {
 	 * 
 	 * @return true if player wins, otherwise false
 	 */
-	protected boolean calculteGameResualt(int dealerScore , int playerScore ) {
+	public boolean calculteGameResualt(int dealerScore , int playerScore ) {
 
 		if (dealerScore == 21 || playerScore > 21 || dealerScore == playerScore ||
 				(playerScore < 21 && dealerScore < 21 && dealerScore > playerScore)) 

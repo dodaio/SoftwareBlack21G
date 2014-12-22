@@ -1,8 +1,0 @@
-/**
- * 
- */
-/**
- * @author Mayevski
- *
- */
-package JunitTest;

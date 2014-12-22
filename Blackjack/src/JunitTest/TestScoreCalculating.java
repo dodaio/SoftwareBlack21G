@@ -1,9 +1,13 @@
-package Model;
+package JunitTest;
 
 import static org.junit.Assert.*;
 
 import org.junit.Before;
 import org.junit.Test;
+
+import Model.Card;
+import Model.CardType;
+import Model.Hands;
 
 /*
  * This test class is designed to the Hand class.

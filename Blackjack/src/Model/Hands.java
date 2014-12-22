@@ -17,7 +17,7 @@ public class Hands {
 	/**
 	 * Full C'tor.
 	 */
-	protected Hands() {
+	public Hands() {
 		this.dealerCards = new ArrayList<Card>();
 		this.playerCards = new ArrayList<Card>();
 		this.deck = new Deck();
@@ -26,7 +26,7 @@ public class Hands {
 	/**
 	 * @return the dealerCards
 	 */
-	protected List<Card> getDealerCards() {
+	public List<Card> getDealerCards() {
 		return dealerCards;
 	}
 
@@ -41,7 +41,7 @@ public class Hands {
 	/**
 	 * @return the playerCards
 	 */
-	protected List<Card> getPlayerCards() {
+	public List<Card> getPlayerCards() {
 		return playerCards;
 	}
 
@@ -82,7 +82,7 @@ public class Hands {
 	 * 
 	 * @return the dealer simple score
 	 */
-	protected int getDealerScore() {
+	public int getDealerScore() {
 		int score = 0, cValue;
 		for (Card card : dealerCards) {
 			cValue = card.getcValue();
@@ -108,7 +108,7 @@ public class Hands {
 	 * 
 	 * @return the player simple score
 	 */
-	protected int getPlayerScore() {
+	public int getPlayerScore() {
 		int i = 0, cValue;
 		boolean ace = false;
 		for (Card card : playerCards) {
