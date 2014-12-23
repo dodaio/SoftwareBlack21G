@@ -17,6 +17,7 @@ public class ModelLogic {
 	private static String win_msg = "You Won";
 	/** Result string for View layer */
 	private static String lose_msg = "You Lost";
+	private static AudioPlayer sounds;
 
 	/*************************
 	 * For use in next iteration of scrum private static
@@ -31,6 +32,8 @@ public class ModelLogic {
 	public ModelLogic(ControllerLogic controller) {
 		ModelLogic.controller = controller;
 		hands = new Hands();
+		sounds = new AudioPlayer();
+		sounds.playMusic(AudioPlayer.Musics.GAME_MUSIC);
 	}
 
 	// ***************************************** Methods ******************************************
@@ -59,7 +62,7 @@ public class ModelLogic {
 		hands.reset();
 		controller.showDealerFirstCard(false);
 		controller.resetGameOnUI();
-
+		sounds.playEffect(AudioPlayer.Effects.SHUFFLE);
 		for (int i = 0; i < 2; i++) { // deals two cards for the player and
 										// dealer
 			hands.hitDealer();
@@ -69,6 +72,7 @@ public class ModelLogic {
 													// button on
 		controller.dealBtnVisability(false); // and deal button off.
 		updateDealerCards(hands.getDealerCards());
+		sounds.playEffect(AudioPlayer.Effects.DEAL);
 		updatePlayer();
 		if (hands.getPlayerScore() == 21)
 			endRound();	 // player is at 21 and forced to stand, dealer play
@@ -79,6 +83,7 @@ public class ModelLogic {
 	 * needed.
 	 */
 	public void hit() {
+		sounds.playEffect(AudioPlayer.Effects.HIT);
 		hands.hitPlayer();
 		int score = hands.getPlayerScore();
 		updatePlayer(); // update the score for the UI
