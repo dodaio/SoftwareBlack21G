@@ -2,7 +2,7 @@ package JunitTest;
 
 import static org.junit.Assert.*;
 
-import org.junit.BeforeClass;
+import org.junit.Before;
 import org.junit.Test;
 
 import Controller.ControllerLogic;
@@ -18,7 +18,7 @@ public class TestResultCalculating {
 	static ModelLogic model;
 	static ControllerLogic controller;
 
-	@BeforeClass
+	@Before
 	public static void setUpBeforeClass() throws Exception {
 		controller = null ;
 		model = new ModelLogic(controller );
