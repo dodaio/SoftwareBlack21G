@@ -98,6 +98,13 @@ public class ControllerLogic {
 	public void updateDealerCards(List<Model.Card> cards) {
 		view.updateDealerCards(cards);
 	}
+	
+	/**
+	 * Update WinsAndLoses
+	 */
+	public void updateWinsAndLoses(int wins, int loses){
+		view.updateWinsAndLoses(wins, loses);
+	}
 
 	/**
 	 * Sets DEAL button visibility

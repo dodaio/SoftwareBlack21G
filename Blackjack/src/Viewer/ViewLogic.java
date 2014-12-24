@@ -96,6 +96,13 @@ public class ViewLogic {
 	public void updateDealerScore(int score) {
 		mgame.updateDealerScore(score);
 	}
+	
+	/**
+	 * Update WinsAndLoses
+	 */
+	public void updateWinsAndLoses(int wins, int loses){
+		mgame.updateWinsAndLoses(wins, loses);
+	}
 
 	/**
 	 * Update Player's cards

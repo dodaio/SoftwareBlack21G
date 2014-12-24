@@ -59,6 +59,8 @@ public class ModelLogic {
 		controller.showDealerFirstCard(true);
 		updateDealer();
 		updatePlayer();
+		updateWinsAndLoses(wins, loses);
+		
 	}
 
 	/**
@@ -140,13 +142,14 @@ public class ModelLogic {
 	 */
 	public boolean calculteGameResualt(int dealerScore , int playerScore ) {
 
-		if (dealerScore == 21 || playerScore > 21 || dealerScore == playerScore ||
-				(playerScore < 21 && dealerScore < 21 && dealerScore > playerScore)) 
+		if (dealerScore == 21 || playerScore > 21 || dealerScore == playerScore || (playerScore < 21 && dealerScore < 21 && dealerScore > playerScore)) 
 		{
+			loses++;
 			return false; // lose
 		} 
 		else
 		{
+			wins++;
 			return true; // win
 		}
 	}
@@ -202,6 +205,13 @@ public class ModelLogic {
 	 */
 	private void updateDealerCards(List<Model.Card> cards) {
 		controller.updateDealerCards(cards);
+	}
+	
+	/**
+	 * Update WinsAndLoses to theScreen
+	 */
+	public void updateWinsAndLoses(int Wins, int Loses){
+		controller.updateWinsAndLoses(Wins, Loses);
 	}
 
 	/**

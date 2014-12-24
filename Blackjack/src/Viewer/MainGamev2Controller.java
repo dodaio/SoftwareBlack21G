@@ -327,6 +327,14 @@ public class MainGamev2Controller extends AnchorPane implements Initializable {
 		public void updateDealerScore(int score) {
 			DScore.setText(String.valueOf(score));
 		}
+		
+		/**
+		 * Update The Numbers of wins and loses of player
+		 */
+		public void updateWinsAndLoses(int wins, int loses){
+			Lbl_Loses.setText(String.valueOf(loses));
+			Lbl_Wins.setText(String.valueOf(wins));
+		}
 
 		/**
 		 * Initialize the player cards to the screen - max card available is 9
