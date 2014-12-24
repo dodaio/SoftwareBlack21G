@@ -262,7 +262,11 @@ public class ModelLogic {
 				 Gamescore -= score*2;			//if the round is even multiply the score by 3
 		 }
 		 
+		 if(Gamescore>0)
+			 return Gamescore;	
+		 else
+			 Gamescore = 0;		//if result is negative then return zero
 		 
-		 return (Gamescore > 0 ? Gamescore : 0);	//if result is negative then return zero
+		 return Gamescore;
 	 }
 }
