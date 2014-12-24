@@ -73,6 +73,21 @@ public class MainGamev2Controller extends AnchorPane implements Initializable {
 		
 		@FXML
 		RadioMenuItem effects;
+		
+		@FXML
+		Button Btn_Quit;
+		
+		@FXML
+		Button Btn_NewGame;
+		
+		@FXML
+		Label Lbl_Wins;
+		
+		@FXML
+		Label Lbl_Loses;
+		
+		@FXML
+		Label Lbl_TotalScore;
 
 	// *******************************C'tor***********************************************
 	
@@ -276,6 +291,17 @@ public class MainGamev2Controller extends AnchorPane implements Initializable {
 			DScore.setText("");	 //reset player score
 		}
 
+		/**
+		 * Restart new Game
+		 * 
+		 * Clearing all Statistics and messages on the screen
+		 */
+		public void RestartGame() {
+			Lbl_Loses.setText("");
+			Lbl_Wins.setText("");
+			Lbl_TotalScore.setText("");
+		}
+		
 		/**
 		 * Update the score of the player to the screen
 		 * @param score
