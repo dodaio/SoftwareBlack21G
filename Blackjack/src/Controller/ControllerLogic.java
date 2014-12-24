@@ -121,8 +121,24 @@ public class ControllerLogic {
 	public void hitAndStandBtnVisability(boolean visible) {
 		view.hitAndStandBtnVisability(visible);
 	}
+	
+	/**
+	 * Handle music menu button click
+	 * @param status true if on
+	 */
+	public void onMusicMenuClick(boolean status) {
+		model.setMusicSetting(status);
+	}
+	
+	/**
+	 * Handle sound effects menu button click
+	 * @param status true if on
+	 */
+	public void onEffectsMenuClick(boolean status) {
+		model.setSoundEffectsSetting(status);
+	}
 
-	/*
+	/**
 	 * Reset game board
 	 */
 	public void resetGameOnUI() {

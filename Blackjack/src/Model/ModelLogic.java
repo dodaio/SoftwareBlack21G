@@ -109,7 +109,23 @@ public class ModelLogic {
 		}
 		endRound(); // end round and declare result to player
 	}
+	
+	/**
+	 * Updates music setting
+	 * @param status True if on
+	 */
+	public void setMusicSetting(boolean status) {
+		sounds.setMusic(status);
+	}
 
+	/**
+	 * Updates sound effects setting
+	 * @param status True if on
+	 */
+	public void setSoundEffectsSetting(boolean status) {
+		sounds.setSoundEffects(status);
+	}
+	
 	/**
 	 * returns game result
 	 * 
