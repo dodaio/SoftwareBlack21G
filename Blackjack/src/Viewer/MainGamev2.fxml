@@ -111,7 +111,7 @@
 		</Label>
 		 <VBox alignment="TOP_CENTER" layoutX="11.0" layoutY="45.0" prefHeight="200.0" prefWidth="100.0" spacing="30.0">
          <children>
-            <Button fx:id="Btn_Qiut" mnemonicParsing="false" prefHeight="37.0" prefWidth="80.0" text="Quit">
+            <Button fx:id="Btn_Qiut" mnemonicParsing="false" onAction="#Exit" prefHeight="37.0" prefWidth="80.0" text="Quit">
                <cursor>
                   <Cursor fx:constant="OPEN_HAND" />
                </cursor></Button>
