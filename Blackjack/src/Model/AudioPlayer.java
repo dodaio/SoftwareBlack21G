@@ -5,6 +5,8 @@ import java.util.HashMap;
 import java.util.Map;
 
 import javafx.scene.media.AudioClip;
+import javafx.scene.media.Media;
+import javafx.scene.media.MediaPlayer;
 
 public class AudioPlayer {
 	/**
@@ -72,11 +74,15 @@ public class AudioPlayer {
 	/**
 	 * Map that facilitates AudioClip instances for the game sounds
 	 */
-	private static final Map<String, AudioClip> musicClips;
+	private static final Map<String, MediaPlayer> musicClips;
 	static {
-		Map<String, AudioClip> tmpClips = new HashMap<String, AudioClip>();
-		tmpClips.put(Musics.GAME_MUSIC.toString(), new AudioClip(
-				AudioPlayer.class.getResource("mariotheme.mp3").toString()));
+		/*
+		 * DON'T try to change to AudioPlayer, it has a bug on setCycleCount (loop).
+		 * When get resource string, keep it as AudioPlayer. MediaPlayer has bug on getResource
+		 */
+		Map<String, MediaPlayer> tmpClips = new HashMap<String, MediaPlayer>();
+		tmpClips.put(Musics.GAME_MUSIC.toString(), new MediaPlayer( new Media(
+				AudioPlayer.class.getResource("mariotheme.mp3").toString())));
 		musicClips = Collections.unmodifiableMap(tmpClips);
 	}
 
@@ -120,8 +126,12 @@ public class AudioPlayer {
 	 */
 	protected void playMusic(Musics music) {
 		if (musicEnabled) {
+			MediaPlayer musicClip = musicClips.get(music.toString());
 			// Play music on 60% volume
-			musicClips.get(music.toString()).play(0.6);
+			musicClip.setVolume(0.6);
+			// Play music in a loop
+			musicClip.setCycleCount(MediaPlayer.INDEFINITE);
+			musicClip.play();
 		}
 	}
 
@@ -133,7 +143,7 @@ public class AudioPlayer {
 		if (status) {
 			playMusic(Musics.GAME_MUSIC);
 		} else {
-			for (AudioClip music : musicClips.values()) {
+			for (MediaPlayer music : musicClips.values()) {
 				music.stop();
 			}
 		}
