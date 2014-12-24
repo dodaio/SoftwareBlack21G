@@ -56,6 +56,13 @@ public class ControllerLogic {
 	public void onStandClick() {
 		model.stand();
 	}
+	
+	/**
+	 * pass New Game button clicked to model
+	 */
+	public void onNewGameClick() {
+		model.newSession();
+	}
 
 	/**
 	 * pass round result to view
@@ -151,6 +158,13 @@ public class ControllerLogic {
 	 */
 	public void showDealerFirstCard(boolean visible) {
 		view.showDealerFirstCard(visible);
+	}
+	
+	/**
+	 * Restaet the game - new game button pressed
+	 */
+	public void RestartGame(){
+		view.RestartGame();
 	}
 	
 	/**

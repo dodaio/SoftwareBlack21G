@@ -17,7 +17,14 @@ public class ModelLogic {
 	private static String win_msg = "You Won";
 	/** Result string for View layer */
 	private static String lose_msg = "You Lost";
+	/**Sound reference */
 	private static AudioPlayer sounds;
+	/** Counts the game round */
+	private static int RoundofGameCount = 0;
+	/** Counts wins */
+	private static int wins;
+	/** Counts lost */
+	private static int loses;
 
 	/*************************
 	 * For use in next iteration of scrum private static
@@ -197,10 +204,20 @@ public class ModelLogic {
 		controller.updateDealerCards(cards);
 	}
 
-	/*************************
-	 * For use in next iteration of scrum /** new session: rest the session
+	/**
+	 * Run a new game - reset all stats and score
 	 * score and round number.
-	 * 
-	 * public void newSession(){ sessionScore = 0; roundNum = 0; }
-	 */
+	 */ 
+	 public void newSession(){ 
+		 wins = 0;
+		 loses = 0;
+		 RoundofGameCount = 0;
+		 controller.showDealerFirstCard(true);
+		 controller.resetGameOnUI();
+		 controller.RestartGame();
+		 hands.reset();
+		 controller.hitAndStandBtnVisability(false); // turn off hit and stand buttons
+		 controller.dealBtnVisability(true); //  turn deal  button on.
+	 }
+	 
 }

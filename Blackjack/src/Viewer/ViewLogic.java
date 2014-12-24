@@ -180,6 +180,14 @@ public class ViewLogic {
 	}
 	
 	/**
+	 * Restart the game - reset all statistics and wins + loses
+	 */
+	public void RestartGame() {
+		mgame.RestartGame();
+	}
+	
+	
+	/**
 	 * Change dealer's first card visibility
 	 * @param visible true for visible, false for hidden
 	 */

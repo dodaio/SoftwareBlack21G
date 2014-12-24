@@ -206,6 +206,14 @@ public class MainGamev2Controller extends AnchorPane implements Initializable {
 	private void onStandClick() {
 		controllerInstance.onStandClick();
 	}
+	
+	/**
+	 * When New game button pressed
+	 */
+	@FXML
+	private void onNewGameClick() {
+		controllerInstance.onNewGameClick();
+	}
 
 	/**
 	 * printing the result of the game to the screen
@@ -297,6 +305,7 @@ public class MainGamev2Controller extends AnchorPane implements Initializable {
 		 * Clearing all Statistics and messages on the screen
 		 */
 		public void RestartGame() {
+			FirstCardDealer.setVisible(false);
 			Lbl_Loses.setText("");
 			Lbl_Wins.setText("");
 			Lbl_TotalScore.setText("");
