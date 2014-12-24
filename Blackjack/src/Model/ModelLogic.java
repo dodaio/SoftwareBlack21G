@@ -25,6 +25,8 @@ public class ModelLogic {
 	private static int wins;
 	/** Counts lost */
 	private static int loses;
+	/** Score of player */
+	private static int Gamescore = 0;
 
 	/*************************
 	 * For use in next iteration of scrum private static
@@ -59,7 +61,9 @@ public class ModelLogic {
 		controller.showDealerFirstCard(true);
 		updateDealer();
 		updatePlayer();
+		RoundofGameCount++;
 		updateWinsAndLoses(wins, loses);
+		updateScore(calculatePlayerScroe(playerScore, result)); //update score according to results
 		
 	}
 
@@ -213,6 +217,13 @@ public class ModelLogic {
 	public void updateWinsAndLoses(int Wins, int Loses){
 		controller.updateWinsAndLoses(Wins, Loses);
 	}
+	
+	/**
+	 * Update Score to theScreen
+	 */
+	public void updateScore(int score){
+		controller.updateScore(score);
+	}
 
 	/**
 	 * Run a new game - reset all stats and score
@@ -222,6 +233,7 @@ public class ModelLogic {
 		 wins = 0;
 		 loses = 0;
 		 RoundofGameCount = 0;
+		 Gamescore = 0;
 		 controller.showDealerFirstCard(true);
 		 controller.resetGameOnUI();
 		 controller.RestartGame();
@@ -230,4 +242,27 @@ public class ModelLogic {
 		 controller.dealBtnVisability(true); //  turn deal  button on.
 	 }
 	 
+	 /**
+	  * Calculate the score of the game for player
+	  * The result is calculated according to the requirement if round is even the triple the score, if odd the multiply the score
+	  * the total score is wins - loses
+	  */
+	 public int calculatePlayerScroe(int score, boolean resualt){
+		 if(resualt){							//if player won then we add the score
+			 if(RoundofGameCount % 2 == 0)
+				 Gamescore += score*3;			//if the round is even multiply the score by 3
+			 else
+				 Gamescore += score*2;			//if the round is even multiply the score by 3
+		 }
+		
+		 if(!resualt){
+			 if(RoundofGameCount % 2 == 0)
+				 Gamescore -= score*3;			//if the round is even multiply the score by 3
+			 else
+				 Gamescore -= score*2;			//if the round is even multiply the score by 3
+		 }
+		 
+		 
+		 return (Gamescore > 0 ? Gamescore : 0);	//if result is negative then return zero
+	 }
 }

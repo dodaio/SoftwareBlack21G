@@ -103,6 +103,13 @@ public class ViewLogic {
 	public void updateWinsAndLoses(int wins, int loses){
 		mgame.updateWinsAndLoses(wins, loses);
 	}
+	
+	/**
+	 * Update Score to theScreen
+	 */
+	public void updateScore(int score){
+		mgame.updateScore(score);
+	}
 
 	/**
 	 * Update Player's cards

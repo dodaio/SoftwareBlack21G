@@ -105,6 +105,13 @@ public class ControllerLogic {
 	public void updateWinsAndLoses(int wins, int loses){
 		view.updateWinsAndLoses(wins, loses);
 	}
+	
+	/**
+	 * Update Score to theScreen
+	 */
+	public void updateScore(int score){
+		view.updateScore(score);
+	}
 
 	/**
 	 * Sets DEAL button visibility
