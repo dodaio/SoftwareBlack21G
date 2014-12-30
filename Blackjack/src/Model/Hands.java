@@ -117,7 +117,7 @@ public class Hands {
 				i += 10;
 			else {
 				if (cValue == 1) // if ace
-					if (ace == false) { // first ace
+					if (!ace) { // first ace
 						i += 11;
 						ace = true;
 					} else
