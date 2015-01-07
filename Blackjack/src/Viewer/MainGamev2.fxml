@@ -35,17 +35,17 @@
 		</MenuBar>
 		<HBox alignment="CENTER" layoutX="249.0" layoutY="440.0" prefHeight="53.0" prefWidth="376.0" spacing="30.0">
 			<children>
-				<Button fx:id="BtnHit" alignment="CENTER" contentDisplay="CENTER" graphicTextGap="8.0" mnemonicParsing="false" onAction="#onHitClick" onMouseEntered="#butttonSound" pickOnBounds="false" prefHeight="37.0" prefWidth="61.0" text="Hit" textAlignment="CENTER">
+				<Button fx:id="BtnHit" alignment="CENTER" contentDisplay="CENTER" graphicTextGap="8.0" mnemonicParsing="false" onAction="#onHitClick" onMouseEntered="#butttonSound" pickOnBounds="false" prefHeight="37.0" prefWidth="99.0" styleClass="btn2" stylesheets="@Buttons.css" text="Hit" textAlignment="CENTER">
 					<cursor>
 						<Cursor fx:constant="OPEN_HAND" />
 					</cursor>
 				</Button>
-				<Button fx:id="BtnDeal" alignment="CENTER" contentDisplay="CENTER" graphicTextGap="8.0" mnemonicParsing="false" onAction="#onDealClick" onMouseEntered="#butttonSound" prefHeight="37.0" prefWidth="61.0" text="Deal" textAlignment="CENTER">
+				<Button fx:id="BtnDeal" alignment="CENTER" contentDisplay="CENTER" graphicTextGap="8.0" mnemonicParsing="false" onAction="#onDealClick" onMouseEntered="#butttonSound" prefHeight="37.0" prefWidth="99.0" styleClass="btn2" stylesheets="@Buttons.css" text="Deal" textAlignment="CENTER">
 					<cursor>
 						<Cursor fx:constant="OPEN_HAND" />
 					</cursor>
 				</Button>
-				<Button fx:id="BtnStand" alignment="CENTER" contentDisplay="CENTER" graphicTextGap="8.0" mnemonicParsing="false" onAction="#onStandClick" onMouseEntered="#butttonSound" prefHeight="37.0" prefWidth="61.0" text="Stand" textAlignment="CENTER">
+				<Button fx:id="BtnStand" alignment="CENTER" contentDisplay="CENTER" graphicTextGap="8.0" mnemonicParsing="false" onAction="#onStandClick" onMouseEntered="#butttonSound" prefHeight="37.0" prefWidth="99.0" styleClass="btn2" stylesheets="@Buttons.css" text="Stand" textAlignment="CENTER">
 					<cursor>
 						<Cursor fx:constant="OPEN_HAND" />
 					</cursor>
@@ -109,13 +109,13 @@
 				<Font size="14.0" />
 			</font>
 		</Label>
-		 <VBox alignment="TOP_CENTER" layoutX="11.0" layoutY="45.0" prefHeight="200.0" prefWidth="100.0" spacing="30.0">
+		 <VBox alignment="TOP_CENTER" layoutX="11.0" layoutY="45.0" prefHeight="200.0" prefWidth="135.0" spacing="30.0">
          <children>
-            <Button fx:id="Btn_Qiut" mnemonicParsing="false" onAction="#Exit" onMouseEntered="#butttonSound" prefHeight="37.0" prefWidth="80.0" text="Quit">
+            <Button fx:id="Btn_Qiut" mnemonicParsing="false" onAction="#Exit" onMouseEntered="#butttonSound" prefHeight="37.0" prefWidth="115.0" styleClass="btn2" stylesheets="@Buttons.css" text="Quit">
                <cursor>
                   <Cursor fx:constant="OPEN_HAND" />
                </cursor></Button>
-            <Button fx:id="Btn_NewGame" mnemonicParsing="false" onAction="#onNewGameClick" onMouseEntered="#butttonSound" prefHeight="37.0" prefWidth="80.0" text="New Game">
+            <Button fx:id="Btn_NewGame" mnemonicParsing="false" onAction="#onNewGameClick" onMouseEntered="#butttonSound" prefHeight="37.0" prefWidth="115.0" styleClass="btn2" stylesheets="@Buttons.css" text="New Game">
                <cursor>
                   <Cursor fx:constant="OPEN_HAND" />
                </cursor>

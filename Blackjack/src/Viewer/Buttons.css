@@ -1,0 +1,7 @@
+@CHARSET "windows-1255";
+
+.btn2{
+	-fx-background-color:  linear-gradient(greenyellow   , limegreen );
+    -fx-text-fill: black;
+    -fx-padding: 5 30 5 30;
+   }
