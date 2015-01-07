@@ -4,6 +4,7 @@ import java.util.List;
 
 import Model.ModelLogic;
 import Viewer.ViewLogic;
+import javafx.scene.media.AudioClip;
 import javafx.stage.Stage;
 
 public class ControllerLogic {
@@ -35,6 +36,12 @@ public class ControllerLogic {
 		view = new ViewLogic(controller);
 		view.executeLoginView(primarystage);
 	}
+	
+	/**
+	 * Sound Effect for Buttons
+	 */
+	String str = getClass().getResource("moveoverbuttun.mp3").toString();  //locate the sound file
+	AudioClip buttonSound = new AudioClip(str); //Object to create
 
 	/**
 	 * pass hit button clicked to model
@@ -186,6 +193,13 @@ public class ControllerLogic {
 	 */
 	public void executeSysExit() {
 		System.exit(0);
+	}
+	
+	/**
+	 * PlaySoundEffect
+	 */
+	public void butttonSound() {
+		buttonSound.play();
 	}
 
 }

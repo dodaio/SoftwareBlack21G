@@ -502,4 +502,12 @@ public class MainGamev2Controller extends AnchorPane implements Initializable {
 		protected void showButtonStand() {
 			BtnStand.setVisible(true);
 		}
+		
+		/**
+		 * PlaySoundEffect
+		 */
+		@FXML
+		public void butttonSound() {
+			controllerInstance.butttonSound();
+		}
 }
