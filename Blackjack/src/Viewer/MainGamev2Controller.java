@@ -508,6 +508,8 @@ public class MainGamev2Controller extends AnchorPane implements Initializable {
 		 */
 		@FXML
 		public void butttonSound() {
-			controllerInstance.butttonSound();
+			if (effects.isSelected()) {
+				controllerInstance.butttonSound();
+			}
 		}
 }

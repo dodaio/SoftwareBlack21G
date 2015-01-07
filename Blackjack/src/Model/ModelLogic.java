@@ -2,6 +2,7 @@ package Model;
 
 import java.util.List;
 
+import javafx.scene.media.AudioClip;
 import Controller.ControllerLogic;
 
 public class ModelLogic {
@@ -47,6 +48,14 @@ public class ModelLogic {
 
 	// ***************************************** Methods ******************************************
 
+	/**
+	 * Sound Effect for Buttons
+	 */
+	String str = getClass().getResource("moveoverbuttun.mp3").toString();  //locate the sound file
+	AudioClip buttonSound = new AudioClip(str); //Object to create
+
+	
+	
 	/**
 	 * This method for round end.
 	 */
@@ -269,4 +278,13 @@ public class ModelLogic {
 		 
 		 return Gamescore;
 	 }
+	 
+	 /**
+		 * PlaySoundEffect
+		 */
+		public void butttonSound() {
+			buttonSound.play();
+		}
+	 
+	 
 }

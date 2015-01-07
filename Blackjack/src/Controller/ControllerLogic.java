@@ -37,12 +37,7 @@ public class ControllerLogic {
 		view.executeLoginView(primarystage);
 	}
 	
-	/**
-	 * Sound Effect for Buttons
-	 */
-	String str = getClass().getResource("moveoverbuttun.mp3").toString();  //locate the sound file
-	AudioClip buttonSound = new AudioClip(str); //Object to create
-
+	
 	/**
 	 * pass hit button clicked to model
 	 */
@@ -199,7 +194,7 @@ public class ControllerLogic {
 	 * PlaySoundEffect
 	 */
 	public void butttonSound() {
-		buttonSound.play();
+		model.butttonSound();
 	}
 
 }
