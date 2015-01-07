@@ -230,7 +230,9 @@ public class MainGamev2Controller extends AnchorPane implements Initializable {
 	@FXML
 	private void showAboutWindow() {
 		try {
-			Parent root = FXMLLoader.load(getClass().getResource("About.fxml"));
+			FXMLLoader loader = new FXMLLoader();
+			loader.setLocation(getClass().getResource("About.fxml"));
+			Parent root = (AnchorPane)loader.load();     //FXMLLoader.load(getClass().getResource("About.fxml"));
 			Scene scene = new Scene(root);
 			Stage primaryStage = new Stage();
 			primaryStage.initModality(Modality.WINDOW_MODAL);
@@ -238,6 +240,11 @@ public class MainGamev2Controller extends AnchorPane implements Initializable {
 			primaryStage.setScene(scene);
 			primaryStage.setResizable(false);
 			primaryStage.sizeToScene();
+			primaryStage.getIcons().add(new Image("/GameImages/icon3.png"));
+			@SuppressWarnings("unused")
+			AboutController aboutcont = loader.getController();
+			
+			
 			primaryStage.show();
 		} catch (IOException e) {
 

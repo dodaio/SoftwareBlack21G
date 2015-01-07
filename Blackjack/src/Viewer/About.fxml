@@ -1,15 +1,20 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import javafx.scene.text.*?>
 <?import javafx.scene.control.*?>
 <?import java.lang.*?>
 <?import javafx.scene.layout.*?>
-<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.AnchorPane?>
 
-<BorderPane prefHeight="315.0" prefWidth="432.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1">
-   <center>
-      <Label prefHeight="51.0" prefWidth="222.0" text="Devloped by Dan Ido Marian &amp; Yonatan" BorderPane.alignment="CENTER" />
-   </center>
-   <top>
-      <Label prefHeight="17.0" prefWidth="127.0" text="BlackJack Game ver 2.0" BorderPane.alignment="CENTER" />
-   </top>
-</BorderPane>
+<AnchorPane prefHeight="440.0" prefWidth="523.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Viewer.AboutController">
+   <children>
+      <TextArea fx:id="Orders" layoutX="59.0" layoutY="69.0" prefHeight="258.0" prefWidth="406.0" />
+      <Label layoutX="59.0" layoutY="35.0" prefHeight="25.0" prefWidth="113.0" text="Game Details:">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </Label>
+      <Label layoutX="59.0" layoutY="336.0" text="Developed by Dan, Ido, Marian &amp; Yonatan" />
+      <Label layoutX="59.0" layoutY="363.0" prefHeight="17.0" prefWidth="125.0" text="\@ All Right reserved" />
+   </children>
+</AnchorPane>
