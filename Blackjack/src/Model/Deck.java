@@ -91,7 +91,6 @@ public class Deck {
 			{
 				shuffleArray();  //if we are out of cards to deal, shuffle again and deal.
 				deckIndex = 0;
-				System.out.println("New deck was shuffled");
 			}
 			return getCardsDeck().get(deckIndex++); // deckIndex is re-initilized at shuffleArray()
 		}

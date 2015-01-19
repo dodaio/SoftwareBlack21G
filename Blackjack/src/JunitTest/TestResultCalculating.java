@@ -4,8 +4,6 @@ import static org.junit.Assert.*;
 
 import org.junit.BeforeClass;
 import org.junit.Test;
-
-import Controller.ControllerLogic;
 import Model.ModelLogic;
 
 /*
@@ -16,12 +14,10 @@ import Model.ModelLogic;
 public class TestResultCalculating {
 	
 	static ModelLogic model;
-	static ControllerLogic controller;
 
 	@BeforeClass
 	public static void setUpBeforeClass() throws Exception {
-		controller = null ;
-		model = new ModelLogic(controller );
+		model = new ModelLogic();
 	}
 
 	@Test

@@ -37,6 +37,12 @@ public class ModelLogic {
 
 	// ***************************************** Constructors ******************************************
 	/**
+	 * C'tor for tests 
+	 */
+	public ModelLogic() {
+	}
+	
+	/**
 	 * Full C'tor.
 	 */
 	public ModelLogic(ControllerLogic controller) {
