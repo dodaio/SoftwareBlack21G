@@ -13,7 +13,7 @@ public class AudioPlayer {
 	 * Sound effects
 	 */
 	public static enum Effects {
-		HIT("hit"), DEAL("deal"), SHUFFLE("shuffle");
+		HIT("hit"), DEAL("deal"), SHUFFLE("shuffle"), MOVE_OVER_BUTTON("move_over_button");
 		private final String effect;
 
 		private Effects(final String effect) {
@@ -44,6 +44,8 @@ public class AudioPlayer {
 				.getResource("hit.wav").toString()));
 		tmpClips.put(Effects.SHUFFLE.toString(), new AudioClip(
 				AudioPlayer.class.getResource("shuffle.mp3").toString()));
+		tmpClips.put(Effects.MOVE_OVER_BUTTON.toString(), new AudioClip(
+				AudioPlayer.class.getResource("moveoverbutton.mp3").toString()));
 		effectClips = Collections.unmodifiableMap(tmpClips);
 	}
 
